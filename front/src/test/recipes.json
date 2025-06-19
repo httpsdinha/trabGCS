@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Nome Receita 1",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Nome Receita 2",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Nome Receita 3",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Nome Receita 4",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Nome Receita 5",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Nome Receita 6",
+    "custo": "Médio",
+    "tempo": "+60min",
+    "qtd_pessoa": "+6 pessoas",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
+    "image": "icone.jpg"
+  }
+]
