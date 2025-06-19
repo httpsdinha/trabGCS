@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16
+    container_name: cb_db
+    environment:
+      POSTGRES_USER: cb
+      POSTGRES_PASSWORD: cb
+      POSTGRES_DB: cb
+    networks:
+      - app-network
+    ports:
+      - "5432:5432"
+  api:
+    build:
+      context: ./
+    container_name: cb_api
+    environment:
+      DATABASE_HOST: cb_db
+      DATABASE_PORT: 5432
+      DATABASE_USER: cb
+      DATABASE_PASSWORD: cb
+      DATABASE_NAME: cb
+    networks:
+      - app-network
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
+networks:
+  app-network:
+    driver: bridge
