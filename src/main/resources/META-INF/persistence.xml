@@ -8,7 +8,8 @@
         <!-- Implementação do JPA, no nessa caso Hibernate -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Aqui são listadas todas as entidades -->
-        <class>business.Receita</class>
+        <class>com.back.cookbook.dataac.entity.ReceitaEntity</class>
+        <class>com.back.cookbook.dataac.entity.UsuarioEntity</class>
         <properties>
             <!-- Propriedades JDBC -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

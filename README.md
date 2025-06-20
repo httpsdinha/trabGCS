@@ -1,23 +1,28 @@
-<h1>Backend da aplicação CookBook</h1>
-<h2>Configuração do banco de dados</h2>
-<p>
-  SGBD: <b>PostgreSQL</b><br>
-  Nome: <b>banco_postgres_cb</b><br>
-  Arquivos de configuração: <b>application.properties e META-INF/persistence.xml</b><br>
-  Configurando o PostgreSQL para a aplicação conectar:
-  <ol>
-    <li>Instalar o PostgreSQL na máquina</li>
-    <li>Acessar via terminal (psql) ou interface (pgAdmin)</li>
-    <li>Criar o banco vazio: CREATE DATABASE banco_postgres_cb;</li>
-  </ol>
-</p>
+# 📡 CookBook Backend 💕
 
-<h2>Rodando a aplicação</h2>
-<p>
-  <b>Usar uma IDE e rodar a classe principal CookbookApplication.java</b>
-</p>
+> O projeto contempla uma API com serviços CRUD para as principais entidades
+> do site CookBook, permitindo tratar requisições de forma organizada e eficiente,
+> e realizando a persistência em banco de dados.
 
-<h2>Configuração adicional</h2>
-<p>
-  Criar uma pasta chamada <b>uploads</b> na raiz do projeto para armazenar os arquivos enviados.
-</p>
+## 🚀 Tecnologias Utilizadas
+
+- [Java 21 - SpringBoot](https://docs.spring.io/spring-boot/index.html)
+- [PostgreSQL]
+- Docker
+
+---
+
+## 📦 Instalação e Execução Local
+
+### 1. Certifique-se de possuir docker instalado na máquina
+
+### 2. Certifique-se de estar com a porta 5432 livre na máquina, ela será utilizada para o container do banco postgresql.
+
+### 3. Clone o repositório
+```bash
+git clone https://github.com/PET-Sistemas/facilita-ai-project.git
+cd facilita-ai-project
+```
+
+### 4. Execute o projeto
+1. execute o comando para subir a aplicação e o banco de dados: ```docker-compose up```
