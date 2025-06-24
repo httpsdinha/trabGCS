@@ -35,7 +35,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:8080", "http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:3000"})
 @RequestMapping("/receita")
 public class ReceitaController {
     @Autowired(required = true)
@@ -52,7 +52,7 @@ public class ReceitaController {
 
     // Retornar um erro ou código de erro se der errado
     @PostMapping(value = "/adicionar", consumes = "multipart/form-data")
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<String> adicionar(
         @RequestParam String nome,
         @RequestParam(required = false, defaultValue = "") String modo_prep,
@@ -115,7 +115,7 @@ public class ReceitaController {
     }
 
     @PutMapping("/atualizar")
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<String> atualizarReceita(
         @RequestParam Integer id,
         @RequestParam(required = false) String nome,
@@ -149,7 +149,7 @@ public class ReceitaController {
     }
 
     @GetMapping("/listar")
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @ResponseBody
     public ResponseEntity<List<ReceitaEntity>> listarReceitas(@RequestParam String email) {
         UsuarioEntity usuario = usuarioManager.findByEmail(email);
