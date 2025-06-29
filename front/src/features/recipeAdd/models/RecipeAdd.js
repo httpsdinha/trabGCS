@@ -13,11 +13,16 @@ export default class Recipe {
   isComplete() {
     return (
       this.nome &&
+      this.nome.trim().length > 0 &&
       this.ingredientes.length > 0 &&
       this.modo_prep &&
+      this.modo_prep.trim().length > 0 &&
       this.custo !== '0' &&
       this.tempo !== '0' &&
-      this.qtd_pessoas !== '0'
+      this.qtd_pessoas !== '0' &&
+      this.imagem !== null &&
+      this.email &&
+      this.email.trim().length > 0
     );
   }
 

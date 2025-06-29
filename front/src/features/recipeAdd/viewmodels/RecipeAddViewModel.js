@@ -16,12 +16,29 @@ export function useRecipeAddViewModel() {
   const userEmail = ref(localStorage.getItem('userEmail') || '');
 
   const isFormIncomplete = computed(() => {
-    return !nome.value || !ingredientes.value || !modo_prep.value || custo.value === '0' || tempo.value === '0' || qtd_pessoas.value === '0';
+    return !nome.value || 
+           !ingredientes.value || 
+           !modo_prep.value || 
+           custo.value === '0' || 
+           tempo.value === '0' || 
+           qtd_pessoas.value === '0' ||
+           !image.value;
   });
 
   const handleImageUpload = (event) => {
-    image.value = event.target.files[0];
-    imageName.value = image.value ? `${image.value.name} (${image.value.type})` : '';
+    const file = event.target.files[0];
+    if (file) {
+      // Validar se é realmente uma imagem
+      if (!file.type.startsWith('image/')) {
+        alert('Por favor, selecione apenas arquivos de imagem.');
+        return;
+      }
+      image.value = file;
+      imageName.value = `${file.name} (${file.type})`;
+    } else {
+      image.value = null;
+      imageName.value = '';
+    }
   };
 
   const addRecipe = async (recipeData) => {
@@ -39,8 +56,19 @@ export function useRecipeAddViewModel() {
   };
 
   const submitForm = async () => {
-    if (isFormIncomplete.value) {
-      alert('Por favor, preencha todos os campos.');
+    // Validação detalhada dos campos
+    const missingFields = [];
+    
+    if (!nome.value) missingFields.push('Nome da Receita');
+    if (!ingredientes.value) missingFields.push('Ingredientes');
+    if (!modo_prep.value) missingFields.push('Modo de Preparo');
+    if (custo.value === '0') missingFields.push('Custo');
+    if (tempo.value === '0') missingFields.push('Tempo');
+    if (qtd_pessoas.value === '0') missingFields.push('Quantidade de Pessoas');
+    if (!image.value) missingFields.push('Imagem');
+    
+    if (missingFields.length > 0) {
+      alert(`Por favor, preencha os seguintes campos obrigatórios:\n\n• ${missingFields.join('\n• ')}`);
       return;
     }
 

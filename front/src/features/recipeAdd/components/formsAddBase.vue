@@ -2,20 +2,24 @@
   <form @submit.prevent="submitForm" enctype="multipart/form-data">
     <nav class="filters-container">
       <filters-base @valueChange="custo = $event" @timeChange="tempo = $event" @serveChange="qtd_pessoas = $event" />
+      <div v-if="custo === '0' || tempo === '0' || qtd_pessoas === '0'" class="filters-warning">
+        <p>* Todos os filtros são obrigatórios</p>
+      </div>
     </nav>
-    <label for="name">Nome da Receita</label>
-    <input type="text" id="input-name" class="add-input-nome" v-model="nome"/>
+    <label for="name">Nome da Receita *</label>
+    <input type="text" id="input-name" class="add-input-nome" v-model="nome" :class="{ 'field-error': !nome }"/>
     
-    <label for="ingrediente">Ingredientes</label>
-    <textarea id="input-ingrediente" class="add-input-ingrediente" v-model="ingredientes"></textarea>
+    <label for="ingrediente">Ingredientes *</label>
+    <textarea id="input-ingrediente" class="add-input-ingrediente" v-model="ingredientes" :class="{ 'field-error': !ingredientes }"></textarea>
     
-    <label for="preparo">Modo de Preparo</label>
-    <textarea id="input-preparo" class="add-input-preparo" v-model="modo_prep"></textarea>
+    <label for="preparo">Modo de Preparo *</label>
+    <textarea id="input-preparo" class="add-input-preparo" v-model="modo_prep" :class="{ 'field-error': !modo_prep }"></textarea>
         
     <article class="add-select-containeimage">
-      <input type="file" id="image-upload" class="image-upload" @change="handleImageUpload" />
-      <label for="image-upload" class="image-upload-label">enviar imagem</label>
+      <input type="file" id="image-upload" class="image-upload" @change="handleImageUpload" accept="image/*" />
+      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem *</label>
       <p v-if="imageName" class="image-name">{{ imageName }}</p>
+      <p v-if="!imageName" class="image-required">* Campo obrigatório</p>
     </article>
     <button type="submit" class="add-button-adicionar" :disabled="isFormIncomplete">ADICIONAR</button>
     <AlertBox :show="showAlert" @close="closeAlert" />
@@ -78,8 +82,21 @@ form {
 
 .filters-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
+}
+
+.filters-warning {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.filters-warning p {
+    color: #ff0000;
+    font-size: 0.8rem;
+    font-family: 'Jost';
+    margin: 0;
 }
 
 label {
@@ -91,10 +108,22 @@ label {
     font-weight: 700;
 }
 
+label::after {
+    content: " *";
+    color: #940D0D;
+    font-weight: bold;
+}
+
 .add-input-nome, .add-input-ingrediente, .add-input-preparo {
     border-radius: 0.3125rem;
     background: transparent;
     border: 1px solid #940D0D;
+    transition: border-color 0.3s ease;
+}
+
+.field-error {
+    border: 2px solid #ff0000 !important;
+    background-color: #fff5f5;
 }
 
 .add-input-nome{
@@ -126,8 +155,13 @@ label {
 }
 
 .add-button-adicionar:disabled {
-  background: #ccc;
+  background: #ccc !important;
   cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.add-button-adicionar:disabled:hover {
+  background: #ccc !important;
 }
 
 .image-upload {
@@ -163,5 +197,14 @@ label {
   color: #000;
   display: flex;
   justify-content: center;
+}
+
+.image-required {
+  font-size: 0.6rem;
+  font-family: 'Jura';
+  color: #ff0000;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.2rem;
 }
 </style>
