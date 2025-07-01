@@ -111,20 +111,45 @@ export default {
 
 <style scoped>
 .favorites-page {
-  margin: 2rem 3rem;
-  font-family: 'Jura', sans-serif;
+  margin: 1rem 2rem;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(45deg, #ff6b6b 0%, #ffa500 50%, #ff1744 100%);
+  min-height: 95vh;
+  border-radius: 25px;
+  padding: 4rem;
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+  border: 3px dashed #ff1744;
 }
 
 .page-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: right;
+  margin-bottom: 5rem;
 }
 
 .page-header h1 {
-  color: #940D0D;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+  position: relative;
+  text-transform: uppercase;
+  font-family: 'Impact', sans-serif;
+  letter-spacing: 5px;
+}
+
+.page-header h1::after {
+  content: '🍽️';
+  position: absolute;
+  top: -30px;
+  right: -60px;
+  font-size: 3rem;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .empty-message {
@@ -181,12 +206,16 @@ export default {
 }
 
 .favorites-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0 auto;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 4rem;
+  margin: 3rem auto;
+  max-width: 1600px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .empty-favorites {
@@ -200,18 +229,33 @@ export default {
 }
 
 .explore-button {
-  background-color: #940D0D;
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.3125rem;
-  font-size: 1.1rem;
+  background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  color: #2d3436;
+  border: 4px solid #ff6b6b;
+  padding: 2rem 4rem;
+  border-radius: 100px;
+  font-size: 1.4rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  position: relative;
+  animation: pulse 2s infinite;
 }
 
 .explore-button:hover {
-  background-color: #7a0b0b;
+  background: conic-gradient(from 180deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 20px 50px rgba(255, 107, 107, 0.8);
+  border-color: #4ecdc4;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
+  50% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.9); }
+  100% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
 }
 
 /* Responsividade */
