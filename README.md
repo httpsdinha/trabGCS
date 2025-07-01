@@ -9,9 +9,10 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- **npm** (Node Package Manager)
+- *npm* (Node Package Manager)
 - Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
 - **Vuex** para gerenciamento de estado
+
 
 ### Backend
 - **Java 21** com **Spring Boot**
