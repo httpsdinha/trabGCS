@@ -96,7 +96,7 @@ npm install
 npm run serve
 ```
 
-Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:8080` ou similar).
+Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:3000` ou similar).
 
 ---
 
