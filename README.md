@@ -11,7 +11,8 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ### Frontend
 - *npm* (Node Package Manager)
 - Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
-- *Pinia* como nova opção de gerenciamento de estado
+- **Vuex** para gerenciamento de estado
+
 
 ### Backend
 - **Java 21** com **Spring Boot**
