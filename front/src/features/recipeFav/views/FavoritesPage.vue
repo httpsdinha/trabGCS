@@ -113,11 +113,17 @@ export default {
 .favorites-page {
   margin: 2rem 3rem;
   font-family: 'Jura', sans-serif;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 80vh;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .page-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
 }
 
 .page-header h1 {
@@ -125,6 +131,20 @@ export default {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(148, 13, 13, 0.2);
+  position: relative;
+}
+
+.page-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #940D0D, #c0392b);
+  border-radius: 2px;
 }
 
 .empty-message {
@@ -184,9 +204,10 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
   margin: 0 auto;
   max-width: 100%;
+  padding: 1rem 0;
 }
 
 .empty-favorites {
@@ -200,18 +221,24 @@ export default {
 }
 
 .explore-button {
-  background-color: #940D0D;
+  background: linear-gradient(135deg, #940D0D, #c0392b);
   color: white;
   border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.3125rem;
+  padding: 1rem 2.5rem;
+  border-radius: 0.5rem;
   font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(148, 13, 13, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .explore-button:hover {
-  background-color: #7a0b0b;
+  background: linear-gradient(135deg, #c0392b, #940D0D);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(148, 13, 13, 0.4);
 }
 
 /* Responsividade */
