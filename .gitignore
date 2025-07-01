@@ -34,3 +34,6 @@ build/
 target/
 build/
 uploads/
+
+### Environment Variables ###
+.env
