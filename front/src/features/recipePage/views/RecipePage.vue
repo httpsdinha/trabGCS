@@ -1,9 +1,15 @@
 <template>
     <header-component />
     <main>
-        <button class="edit-icon" @click="goToEditPage">
-            <img src="@/assets/editar-documento.png" alt="editar_icon" class="editar_icon">
-        </button>
+        <div class="action-buttons">
+            <favorite-button 
+                :recipe-id="recipe.id" 
+                class="favorite-btn-page"
+            />
+            <button class="edit-icon" @click="goToEditPage">
+                <img src="@/assets/editar-documento.png" alt="editar_icon" class="editar_icon">
+            </button>
+        </div>
         <section class="receita">
             <section class="left_main">
                 <img :src="`http://localhost:3000/receita/imagem/${recipe.imagem}`" :alt="recipe.nome" class="imagem_receita">
@@ -39,8 +45,12 @@
 
 <script>
 import { Recipe } from '@/features/recipePage/models/recipePageModels';
+import FavoriteButton from '@/features/recipeFav/components/FavoriteButton.vue';
 
 export default {
+    components: {
+        FavoriteButton
+    },
     data() {
         return {
             recipe: new Recipe('', '', '', '', '', '', '')
@@ -63,6 +73,8 @@ export default {
                     data.custo,
                     data.imagem
                 );
+                // Adicionar o ID à receita
+                this.recipe.id = data.id;
             }
         },
         goToPage(path) {
@@ -137,14 +149,31 @@ export default {
   .editar_icon {
     width: 25px;
   }
-  
-  .edit-icon {
+
+  .action-buttons {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .edit-icon {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+  }
+
+  .edit-icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .favorite-btn-page {
+    position: static;
   }
   
   .icon_info_prato {
