@@ -111,20 +111,46 @@ export default {
 
 <style scoped>
 .favorites-page {
-  margin: 2rem 3rem;
+  margin: 1rem 2rem;
   font-family: 'Jura', sans-serif;
+  background: linear-gradient(45deg, #2c3e50 0%, #34495e 100%);
+  min-height: 90vh;
+  border-radius: 2rem;
+  padding: 3rem;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.3);
+  border: 2px solid #940D0D;
 }
 
 .page-header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: left;
+  margin-bottom: 4rem;
+  padding: 1rem 0;
 }
 
 .page-header h1 {
-  color: #940D0D;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: #ecf0f1;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.page-header h1::before {
+  content: '❤️';
+  position: absolute;
+  top: -20px;
+  left: -50px;
+  font-size: 2rem;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }
 
 .empty-message {
@@ -181,12 +207,14 @@ export default {
 }
 
 .favorites-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 0 auto;
-  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin: 2rem auto;
+  max-width: 1400px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
 }
 
 .empty-favorites {
@@ -200,18 +228,42 @@ export default {
 }
 
 .explore-button {
-  background-color: #940D0D;
-  color: white;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.3125rem;
-  font-size: 1.1rem;
+  background: radial-gradient(circle, #8e44ad, #9b59b6, #e67e22);
+  color: #ecf0f1;
+  border: 3px solid #f39c12;
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 10px 30px rgba(142, 68, 173, 0.5);
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
 }
 
 .explore-button:hover {
-  background-color: #7a0b0b;
+  background: radial-gradient(circle, #e67e22, #f39c12, #8e44ad);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(142, 68, 173, 0.8);
+  border-color: #8e44ad;
+}
+
+.explore-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s;
+}
+
+.explore-button:hover::before {
+  left: 100%;
 }
 
 /* Responsividade */
