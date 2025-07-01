@@ -112,45 +112,45 @@ export default {
 <style scoped>
 .favorites-page {
   margin: 1rem 2rem;
-  font-family: 'Jura', sans-serif;
-  background: linear-gradient(45deg, #2c3e50 0%, #34495e 100%);
-  min-height: 90vh;
-  border-radius: 2rem;
-  padding: 3rem;
-  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.3);
-  border: 2px solid #940D0D;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(45deg, #ff6b6b 0%, #ffa500 50%, #ff1744 100%);
+  min-height: 95vh;
+  border-radius: 25px;
+  padding: 4rem;
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.4);
+  border: 3px dashed #ff1744;
 }
 
 .page-header {
-  text-align: left;
-  margin-bottom: 4rem;
-  padding: 1rem 0;
+  text-align: right;
+  margin-bottom: 5rem;
 }
 
 .page-header h1 {
-  color: #ecf0f1;
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 2rem;
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
   position: relative;
-  text-transform: lowercase;
-  font-style: italic;
+  text-transform: uppercase;
+  font-family: 'Impact', sans-serif;
+  letter-spacing: 5px;
 }
 
-.page-header h1::before {
-  content: '❤️';
+.page-header h1::after {
+  content: '🍽️';
   position: absolute;
-  top: -20px;
-  left: -50px;
-  font-size: 2rem;
-  animation: heartbeat 2s ease-in-out infinite;
+  top: -30px;
+  right: -60px;
+  font-size: 3rem;
+  animation: rotate 3s linear infinite;
 }
 
-@keyframes heartbeat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+
 }
 
 .empty-message {
@@ -208,13 +208,16 @@ export default {
 
 .favorites-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  margin: 2rem auto;
-  max-width: 1400px;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 4rem;
+  margin: 3rem auto;
+  max-width: 1600px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+
 }
 
 .empty-favorites {
@@ -228,42 +231,35 @@ export default {
 }
 
 .explore-button {
-  background: radial-gradient(circle, #8e44ad, #9b59b6, #e67e22);
-  color: #ecf0f1;
-  border: 3px solid #f39c12;
-  padding: 1.5rem 3rem;
-  border-radius: 50px;
-  font-size: 1.3rem;
-  font-weight: 900;
+
+  background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  color: #2d3436;
+  border: 4px solid #ff6b6b;
+  padding: 2rem 4rem;
+  border-radius: 100px;
+  font-size: 1.4rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 0 10px 30px rgba(142, 68, 173, 0.5);
-  text-transform: lowercase;
-  letter-spacing: 2px;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+  text-transform: capitalize;
+  letter-spacing: 3px;
   position: relative;
-  overflow: hidden;
+  animation: pulse 2s infinite;
 }
 
 .explore-button:hover {
-  background: radial-gradient(circle, #e67e22, #f39c12, #8e44ad);
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 15px 40px rgba(142, 68, 173, 0.8);
-  border-color: #8e44ad;
+  background: conic-gradient(from 180deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 20px 50px rgba(255, 107, 107, 0.8);
+  border-color: #4ecdc4;
 }
 
-.explore-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: left 0.5s;
-}
+@keyframes pulse {
+  0% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
+  50% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.9); }
+  100% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
 
-.explore-button:hover::before {
-  left: 100%;
 }
 
 /* Responsividade */
