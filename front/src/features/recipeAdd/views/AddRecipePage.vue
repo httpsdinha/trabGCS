@@ -77,26 +77,49 @@ export default {
 .back-button {
   position: absolute;
   left: 2rem;
-  background: none;
-  border: none;
+
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  padding: 0.75rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
 }
 
 .back-button:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.back-button:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .back-icon {
   width: 1.5rem;
   height: 1.5rem;
-  transform: rotate(180deg); /* Rotaciona a seta para apontar para esquerda */
-  filter: brightness(0.4); /* Deixa o ícone um pouco mais escuro */
+  transform: rotate(90deg);
+  filter: brightness(0.3) contrast(1.2);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover .back-icon {
+  filter: brightness(0.1) contrast(1.4);
+  transform: rotate(90deg) scale(1.05);
 }
 
 h2 {
@@ -127,6 +150,8 @@ h2 {
 
   .back-button {
     left: 1rem;
+    padding: 0.6rem;
+    border-radius: 10px;
   }
 
   .back-icon {
