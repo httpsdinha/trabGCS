@@ -77,6 +77,7 @@ export default {
 .back-button {
   position: absolute;
   left: 2rem;
+
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;

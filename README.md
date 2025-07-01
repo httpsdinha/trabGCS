@@ -9,8 +9,10 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- **npm** (Node Package Manager)
+- *npm* (Node Package Manager)
 - Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
+- **Vuex** para gerenciamento de estado
+
 
 ### Backend
 - **Java 21** com **Spring Boot**
@@ -95,7 +97,7 @@ npm install
 npm run serve
 ```
 
-Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:8080` ou similar).
+Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:3000` ou similar).
 
 ---
 
