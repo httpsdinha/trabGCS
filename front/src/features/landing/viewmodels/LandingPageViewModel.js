@@ -45,10 +45,21 @@ export default {
       this.isLoading = true;
 
       try {
-        const response = await this.performLogin(email, senha);
-        
-        if (this.isLoginSuccessful(response)) {
-          this.handleSuccessfulLogin(email);
+        const response = await axiosInstance.post('/usuario/login', {
+          email: email,
+          senha: senha
+        }, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (response.status === 200 && response.data === 'Login válido') {
+          localStorage.setItem('userEmail', email); // Store user's email
+          
+          // Verifica se há uma rota de redirecionamento salva
+          const redirectTo = this.$route.query.redirect || '/recipelist';
+          this.$router.push(redirectTo);
         } else {
           this.showError('Email ou senha inválidos');
         }
