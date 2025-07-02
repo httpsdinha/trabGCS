@@ -17,7 +17,7 @@
         
     <article class="add-select-containeimage">
       <input type="file" id="image-upload" class="image-upload" @change="handleImageUpload" accept="image/*" />
-      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem *</label>
+      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem</label>
       <p v-if="imageName" class="image-name">{{ imageName }}</p>
       <p v-if="!imageName" class="image-required">* Campo obrigatório</p>
     </article>
