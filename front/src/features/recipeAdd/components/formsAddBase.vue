@@ -119,6 +119,7 @@ label::after {
     background: transparent;
     border: 1px solid #940D0D;
     transition: border-color 0.3s ease;
+    font-family: var(--font-family-base);
 }
 
 .field-error {
