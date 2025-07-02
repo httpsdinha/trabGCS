@@ -28,8 +28,8 @@ export function useRecipeListViewModel() {
   const applyFilters = () => {
     filteredRecipes.value = recipes.value.filter(recipe => {
       return (filters.value.custo === 'none' || recipe.custo === filters.value.custo) &&
-             (filters.value.tempo === 'none' || recipe.tempo === filters.value.tempo) &&
-             (filters.value.qtdPessoas === 'none' || 
+            (filters.value.tempo === 'none' || recipe.tempo === filters.value.tempo) &&
+            (filters.value.qtdPessoas === 'none' || 
               (filters.value.qtdPessoas === '+6' ? recipe.qtdPessoas > 6 : recipe.qtdPessoas == filters.value.qtdPessoas));
     });
   };

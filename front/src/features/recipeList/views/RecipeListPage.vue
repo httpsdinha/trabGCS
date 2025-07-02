@@ -15,6 +15,7 @@
 
   <main>
     <section class="recipes-container">
+      <aviso-vazio v-if="filteredRecipes.length === 0"/>
       <recipe-card v-for="recipe in filteredRecipes" :key="recipe.id" :recipe="recipe" />
     </section>
   </main>
@@ -23,11 +24,13 @@
 <script>
 import { useRecipeListViewModel } from '../viewmodels/RecipeListViewModel';
 import RecipeCard from '../components/RecipeCard.vue';
+import AvisoVazio from '../components/AvisoVazio.vue';
 
 export default {
   name: "HomePage",
   components: {
-    RecipeCard
+    RecipeCard,
+    AvisoVazio
   },
   setup() {
     const {
