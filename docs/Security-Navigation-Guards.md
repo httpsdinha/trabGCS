@@ -133,7 +133,6 @@ O sistema agora registra tentativas de acesso não autorizado:
 ### Verificar Autenticação em Componentes
 ```javascript
 import AuthService from '@/utils/AuthService';
-
 // Em qualquer componente
 if (!AuthService.isAuthenticated()) {
   this.$router.push('/');
