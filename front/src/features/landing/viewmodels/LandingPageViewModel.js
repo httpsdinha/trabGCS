@@ -29,7 +29,10 @@ export default {
 
         if (response.status === 200 && response.data === 'Login válido') {
           localStorage.setItem('userEmail', email); // Store user's email
-          this.$router.push('/recipelist');
+          
+          // Verifica se há uma rota de redirecionamento salva
+          const redirectTo = this.$route.query.redirect || '/recipelist';
+          this.$router.push(redirectTo);
         } else {
           alert('Email ou senha inválidos');
         }
