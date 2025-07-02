@@ -150,6 +150,9 @@ export default {
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+
+
+
 }
 
 .empty-message {
@@ -216,6 +219,9 @@ export default {
   border-radius: 20px;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
+
+
+
 }
 
 .empty-favorites {
@@ -229,6 +235,9 @@ export default {
 }
 
 .explore-button {
+
+
+
   background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
   color: #2d3436;
   border: 4px solid #ff6b6b;
@@ -256,6 +265,9 @@ export default {
   0% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
   50% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.9); }
   100% { box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6); }
+
+
+
 }
 
 /* Responsividade */

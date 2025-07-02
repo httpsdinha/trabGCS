@@ -13,6 +13,9 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 - Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
 - **Vuex** para gerenciamento de estado
 
+
+
+
 ### Backend
 - **Java 21** com **Spring Boot**
 - **PostgreSQL** como banco de dados
