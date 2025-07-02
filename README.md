@@ -14,6 +14,8 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 - **Vuex** para gerenciamento de estado
 
 
+
+
 ### Backend
 - **Java 21** com **Spring Boot**
 - **PostgreSQL** como banco de dados
