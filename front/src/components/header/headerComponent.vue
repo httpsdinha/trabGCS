@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 @click="goToPage('/')">CookBook</h1>
+    <h1 @click="goToPage('/recipelist')">CookBook</h1>
     <aside class="search responsive-search">
       <section class="input-container">
         <input type="text" class="search-input" placeholder="Pesquisar" @input="onSearchInput" />
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import AuthService from '@/utils/AuthService';
+
 export default {
   data() {
     return {
@@ -33,6 +35,12 @@ export default {
   },
   methods: {
     goToPage(route) {
+      // Se a rota for para uma página protegida, verifica autenticação
+      if (route === '/recipelist' && !AuthService.isAuthenticated()) {
+        // Se não estiver autenticado, redireciona para login
+        this.$router.push('/');
+        return;
+      }
       this.$router.push(route);
     },
     toggleModal() {
