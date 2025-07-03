@@ -4,6 +4,7 @@ import filtersBase from '@/components/common/filtersBase.vue';
 import RecipeForm from '@/features/recipeAdd/components/formsAddBase.vue';
 import AlertBox from '@/features/recipeAdd/components/alertBox.vue';
 import FavoriteButton from '@/features/recipeFav/components/FavoriteButton.vue';
+import RecipeImage from '@/components/common/RecipeImage.vue';
 
 export default {
     install(app) {
@@ -13,6 +14,7 @@ export default {
         app.component('RecipeForm', RecipeForm);
         app.component('AlertBox', AlertBox);
         app.component('FavoriteButton', FavoriteButton);
+        app.component('RecipeImage', RecipeImage);
         
     },
 };
