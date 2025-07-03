@@ -86,7 +86,7 @@ export default {
 }
 
 .favorite-btn {
-  position: static;
+  position: absolute;
   margin: 0;
 }
 
