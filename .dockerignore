@@ -1,0 +1,29 @@
+# Node modules
+front/node_modules/
+**/node_modules/
+
+# Build outputs
+front/dist/
+front/build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
