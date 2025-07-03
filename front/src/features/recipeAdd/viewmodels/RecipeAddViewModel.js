@@ -1,6 +1,7 @@
 import { ref, computed } from 'vue';
 import Recipe from '../models/RecipeAdd';
 import axiosInstance from '@/plugins/axios';
+import ImageService from '@/services/ImageService';
 
 export function useRecipeAddViewModel() {
   const nome = ref('');
@@ -28,13 +29,15 @@ export function useRecipeAddViewModel() {
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
-      // Validar se é realmente uma imagem
-      if (!file.type.startsWith('image/')) {
-        alert('Por favor, selecione apenas arquivos de imagem.');
+      // Usar o ImageService para validação
+      if (!ImageService.validateImageFile(file)) {
+        const errorMessage = ImageService.getValidationErrorMessage(file);
+        alert(errorMessage);
         return;
       }
       image.value = file;
       imageName.value = `${file.name} (${file.type})`;
+      console.log('Imagem válida selecionada:', file);
     } else {
       image.value = null;
       imageName.value = '';
