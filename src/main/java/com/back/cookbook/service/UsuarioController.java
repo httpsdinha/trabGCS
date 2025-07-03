@@ -33,7 +33,7 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginDTO login){
         try{
-            boolean sla = usuarioManager.validaUsuario(login.getEmail(), login.getSenha());
+            boolean sla = usuarioManager.validaUsuario(login.email(), login.senha());
             if(!sla)
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email ou senha inválidos");
             else
