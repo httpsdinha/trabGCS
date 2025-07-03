@@ -9,12 +9,9 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- *npm* (Node Package Manager)
-- Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
+- **Vue.js** como framework principal
+- **npm** (Node Package Manager)
 - **Vuex** para gerenciamento de estado
-
-
-
 
 ### Backend
 - **Java 21** com **Spring Boot**
@@ -26,11 +23,48 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ## 📋 Pré-requisitos
 
 Antes de começar, certifique-se de que você tem as seguintes ferramentas instaladas em sua máquina:
+
+### Ferramentas Necessárias
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/) (que inclui o `npm`)
 - [Docker](https://www.docker.com/products/docker-desktop/)
 
-> **Atenção:** Certifique-se também de que a porta `5432` da sua máquina esteja livre, pois ela será utilizada pelo container do banco de dados PostgreSQL.
+### 🔍 Verificação de Instalação
+Execute os comandos abaixo para verificar se as ferramentas estão instaladas corretamente:
+
+```bash
+# Verificar instalação do Git
+git --version
+
+# Verificar instalação do Node.js e npm
+node -v
+npm -v
+
+# Verificar instalação do Docker
+docker version
+docker-compose --version
+```
+
+### 🔌 Verificação de Portas
+Certifique-se de que as portas necessárias estejam livres:
+
+```bash
+# Windows - Verificar se a porta 5432 (PostgreSQL) está livre
+netstat -ano | findstr :5432
+
+# Windows - Verificar se a porta 3000 (Frontend) está livre  
+netstat -ano | findstr :3000
+
+# Windows - Verificar se a porta 8080 (Backend) está livre
+netstat -ano | findstr :8080
+
+# Linux/Mac - Verificar portas
+lsof -i :5432
+lsof -i :3000
+lsof -i :8080
+```
+
+> **⚠️ Importante:** Se alguma porta estiver em uso, você precisará parar o serviço que a está utilizando ou configurar uma porta diferente no projeto.
 
 ---
 
@@ -73,24 +107,40 @@ O arquivo `.env` contém as seguintes variáveis que devem ser configuradas:
 
 > **⚠️ Atenção de Segurança:** O arquivo `.env` contém informações sensíveis e **NÃO deve ser versionado**. Ele já está incluído no `.gitignore` para evitar commits acidentais.
 
-### 3. Configure e Execute o Backend
+### 3. Configure o Diretório de Upload de Imagens
+**IMPORTANTE:** Crie o diretório necessário para o upload de imagens das receitas:
+
+```bash
+
+# Crie o diretório de uploads (ajuste o caminho conforme sua configuração)
+mkdir -p uploads/images
+# ou no Windows
+mkdir uploads\images
+```
+
+> **📁 Nota:** Este diretório é necessário para que a aplicação possa armazenar as imagens das receitas enviadas pelos usuários.
+
+### 4. Configure e Execute o Backend
 O backend é servido via Docker, o que simplifica muito o processo.
 
 ```bash
-# Navegue até o diretório do backend
-cd backend/  # ou o nome da pasta do seu backend
+# Certifique-se de estar no diretório raiz do projeto
+cd trabGCS/
 
 # Suba os containers do Spring Boot e do PostgreSQL
 docker-compose up --build
 ```
-Após executar o comando, o Docker fará o download das imagens, construirá os containers e iniciará a API e o banco de dados. O backend estará pronto para receber requisições.
 
-### 4. Configure e Execute o Frontend
+Após executar o comando, o Docker fará o download das imagens, construirá os containers e iniciará a API e o banco de dados. 
+
+**✅ O backend estará disponível em:** `http://localhost:8080`
+
+### 5. Configure e Execute o Frontend
 Em um **novo terminal**, navegue até a pasta do frontend para instalar as dependências e iniciar o servidor de desenvolvimento.
 
 ```bash
 # Navegue até o diretório do frontend (a partir da raiz do projeto)
-cd frontend/  # ou o nome da pasta do seu frontend
+cd front/ 
 
 # Instale todas as dependências do projeto
 npm install
@@ -99,7 +149,9 @@ npm install
 npm run serve
 ```
 
-Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:3000` ou similar).
+**✅ O frontend estará disponível em:** `http://localhost:3000`
+
+> **🎯 Acesso à Aplicação:** Após ambos os serviços estarem rodando, acesse `http://localhost:3000` no seu navegador para interagir com a aplicação completa.
 
 ---
 
@@ -117,5 +169,40 @@ Este projeto implementa boas práticas de segurança para o gerenciamento de cre
 2. **Nunca** commite o arquivo `.env` no Git
 3. **Mantenha** suas credenciais seguras e não as compartilhe
 4. **Use** credenciais diferentes para desenvolvimento, teste e produção
+
+---
+
+## 🐛 Troubleshooting
+
+### Problemas Comuns
+
+#### Docker "exec format error" (Mac M1/M2)
+Se você estiver usando Mac com chip M1/M2 e receber erro de "exec format error":
+```yaml
+# Adicione esta linha ao docker-compose.yml (apenas localmente, não commitar)
+services:
+  db:
+    platform: linux/amd64
+```
+
+#### Porta já em uso
+Se receber erro de porta já em uso:
+```bash
+# Windows - Parar processo na porta
+netstat -ano | findstr :PORTA
+taskkill /PID <PID> /F
+
+# Linux/Mac - Parar processo na porta  
+sudo lsof -ti:PORTA | xargs kill -9
+```
+
+#### Node modules com problemas
+```bash
+# Limpar cache do npm e reinstalar
+cd frontend/
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
 
 ---

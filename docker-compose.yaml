@@ -1,3 +1,10 @@
+#  CookBook Docker Compose Configuration
+# 
+# TROUBLESHOOTING COMUM:
+# - Mac M1/M2 users: Se receber "exec format error", adicione "platform: linux/amd64" 
+#   ao serviço db (não commitar essa alteração)
+# - Windows: Certifique-se que o Docker Desktop está rodando
+#
 services:
   db:
     image: postgres:16
