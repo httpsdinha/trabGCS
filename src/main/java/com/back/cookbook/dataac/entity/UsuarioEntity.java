@@ -11,6 +11,8 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
+    @Column(name = "nome")
+    private String nome;
     @Column(name = "email")
     private String email;
     @Column(name = "senha")
@@ -37,6 +39,8 @@ public class UsuarioEntity {
         return id;
     }
 
+    public String getNome() { return nome; }
+
     public String getEmail() {
         return email;
     }
@@ -54,6 +58,8 @@ public class UsuarioEntity {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    public void setNome(String nome) { this.nome = nome; }
 
     public void setEmail(String email) {
         this.email = email;
