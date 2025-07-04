@@ -5,14 +5,9 @@ import com.back.cookbook.business.UsuarioManager;
 import com.back.cookbook.dataac.entity.ReceitaEntity;
 import com.back.cookbook.dataac.entity.UsuarioEntity;
 
-import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.UUID;
-import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,10 +27,9 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000"})
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RequestMapping("/receita")
 public class ReceitaController {
     @Autowired(required = true)
@@ -43,6 +37,9 @@ public class ReceitaController {
 
     @Autowired
     UsuarioManager usuarioManager;
+    
+    @Autowired
+    ImageUploadService imageUploadService;
 
     @GetMapping("/")
     @ResponseBody
@@ -52,7 +49,7 @@ public class ReceitaController {
 
     // Retornar um erro ou código de erro se der errado
     @PostMapping(value = "/adicionar", consumes = "multipart/form-data")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
     public ResponseEntity<String> adicionar(
         @RequestParam String nome,
         @RequestParam(required = false, defaultValue = "") String modo_prep,
@@ -71,7 +68,7 @@ public class ReceitaController {
 
             String caminhoImagem = null;
             if (imagem != null && !imagem.isEmpty()) {
-                caminhoImagem = salvarImagem(imagem);
+                caminhoImagem = imageUploadService.salvarImagem(imagem);
             }
             ReceitaEntity receita = new ReceitaEntity(nome, modo_prep, ingredientes, tempo, qtd_pessoas, custo, caminhoImagem);
             receita.setUsuario(usuario);
@@ -84,38 +81,23 @@ public class ReceitaController {
         }
     }
 
-    private static final String UPLOAD_DIR = "uploads/";
-
-    private String salvarImagem(MultipartFile imagem) throws IOException {
-        if (imagem.isEmpty() || !imagem.getContentType().startsWith("image/")) {
-            throw new IllegalArgumentException("Arquivo enviado não é uma imagem válida.");
-        }
-
-        String nomeArquivo = UUID.randomUUID().toString() + "_" + imagem.getOriginalFilename();
-        Path pastaDestino = Paths.get(UPLOAD_DIR);
-        Path caminhoCompleto = pastaDestino.resolve(nomeArquivo);
-
-        if (!Files.exists(pastaDestino)) {
-            Files.createDirectories(pastaDestino);
-        }
-
-        Files.copy(imagem.getInputStream(), caminhoCompleto, StandardCopyOption.REPLACE_EXISTING);
-        return nomeArquivo; // Retorna apenas o nome do arquivo
-    }
-
     @GetMapping("/{id}")
     @ResponseBody
     public ResponseEntity<ReceitaEntity> obterReceita(@PathVariable Integer id) {
-        ReceitaEntity receita = receitaManager.obterReceitaPorId(id);
-        if (receita != null) {
-            return ResponseEntity.ok(receita);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        try {
+            ReceitaEntity receita = receitaManager.obterReceitaPorId(id);
+            if (receita != null) {
+                return ResponseEntity.ok(receita);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 
     @PutMapping("/atualizar")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
     public ResponseEntity<String> atualizarReceita(
         @RequestParam Integer id,
         @RequestParam(required = false) String nome,
@@ -129,7 +111,7 @@ public class ReceitaController {
         try {
             String caminhoImagem = null;
             if (imagem != null && !imagem.isEmpty()) {
-                caminhoImagem = salvarImagem(imagem);
+                caminhoImagem = imageUploadService.salvarImagem(imagem);
             }
             receitaManager.atualizarReceita(id, nome, modo_prep, ingredientes, tempo, qtd_pessoas, custo, caminhoImagem);
             return ResponseEntity.ok("Receita atualizada com sucesso.");
@@ -149,7 +131,7 @@ public class ReceitaController {
     }
 
     @GetMapping("/listar")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
     @ResponseBody
     public ResponseEntity<List<ReceitaEntity>> listarReceitas(@RequestParam String email) {
         UsuarioEntity usuario = usuarioManager.findByEmail(email);
@@ -165,7 +147,7 @@ public class ReceitaController {
     @GetMapping("/imagem/{filename:.+}")
     public ResponseEntity<Resource> servirImagem(@PathVariable String filename) {
         try {
-            Path caminhoArquivo = Paths.get(UPLOAD_DIR).resolve(filename).normalize();
+            Path caminhoArquivo = imageUploadService.getCaminhoImagem(filename);
             Resource recurso = new UrlResource(caminhoArquivo.toUri());
 
             if (recurso.exists()) {
@@ -189,7 +171,7 @@ public class ReceitaController {
     @GetMapping("/imagem/url/{filename:.+}")
     public ResponseEntity<String> obterUrlImagem(@PathVariable String filename) {
         try {
-            Path caminhoArquivo = Paths.get(UPLOAD_DIR).resolve(filename).normalize();
+            Path caminhoArquivo = imageUploadService.getCaminhoImagem(filename);
             Resource recurso = new UrlResource(caminhoArquivo.toUri());
 
             if (recurso.exists()) {

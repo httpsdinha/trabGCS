@@ -22,7 +22,7 @@ public class ReceitaManager {
     }
 
     public ReceitaEntity obterReceitaPorId(Integer id) {
-        return receitaRepository.getReferenceById(id);
+        return receitaRepository.findById(id).orElse(null);
     }
 
     public void atualizarReceita(Integer id, String nome, String modo_prep, String ingredientes, String tempo, String qtd_pessoas, String custo, String imagem) {
