@@ -1,18 +1,38 @@
 <template>
     <header-component />
     <main>
-        <div class="action-buttons">
-            <favorite-button 
-                :recipe-id="recipe.id" 
-                class="favorite-btn-page"
-            />
-            <button class="edit-icon" @click="goToEditPage">
-                <img src="@/assets/editar-documento.png" alt="editar_icon" class="editar_icon">
-            </button>
+        <!-- Loading state -->
+        <div v-if="loading" class="loading-container">
+            <p>Carregando receita...</p>
         </div>
-        <section class="receita">
-            <section class="left_main">
-                <img :src="`http://localhost:3000/receita/imagem/${recipe.imagem}`" :alt="recipe.nome" class="imagem_receita">
+        
+        <!-- Error state -->
+        <div v-else-if="error" class="error-container">
+            <p>{{ error }}</p>
+            <button @click="$router.push('/list')" class="btn-voltar">Voltar à Lista</button>
+        </div>
+        
+        <!-- Recipe content -->
+        <div v-else>
+            <div class="action-buttons">
+                <favorite-button 
+                    :recipe-id="recipe.id" 
+                    class="favorite-btn-page"
+                />
+                <button class="edit-icon" @click="goToEditPage">
+                    <img src="@/assets/editar-documento.png" alt="editar_icon" class="editar_icon">
+                </button>
+            </div>
+            <section class="receita">
+                <section class="left_main">
+                    <RecipeImage 
+                        :image-name="recipe.imagem" 
+                        :alt-text="recipe.nome"
+                        width="100%"
+                        height="auto"
+                        class="imagem_receita"
+                    placeholder-text="Imagem da receita não disponível"
+                />
                 <h2 class="ingredientes">Ingredientes</h2>
                 <ul>
                     <li v-for="(ingredient, index) in recipe.ingredientes.split(',')" :key="index">{{ ingredient }}</li>
@@ -40,6 +60,7 @@
                 </section>
             </section>
         </section>
+        </div>
     </main>
 </template>
 
@@ -53,7 +74,9 @@ export default {
     },
     data() {
         return {
-            recipe: new Recipe('', '', '', '', '', '', '')
+            recipe: new Recipe('', '', '', '', '', '', ''),
+            loading: true,
+            error: null
         };
     },
     async created() {
@@ -61,20 +84,36 @@ export default {
     },
     methods: {
         async fetchRecipeData() {
-            const recipeId = localStorage.getItem('recipeId'); // Get the recipe ID from local storage
-            const data = await Recipe.getRecipe(recipeId);
-            if (data) {
-                this.recipe = new Recipe(
-                    data.nome,
-                    data.modo_prep,
-                    data.ingredientes,
-                    data.tempo,
-                    data.qtdPessoas, // Ensure this matches the API response
-                    data.custo,
-                    data.imagem
-                );
-                // Adicionar o ID à receita
-                this.recipe.id = data.id;
+            try {
+                this.loading = true;
+                this.error = null;
+                
+                const recipeId = localStorage.getItem('recipeId');
+                if (!recipeId) {
+                    this.error = 'ID da receita não encontrado';
+                    return;
+                }
+                
+                const data = await Recipe.getRecipe(recipeId);
+                if (data) {
+                    this.recipe = new Recipe(
+                        data.nome,
+                        data.modo_prep,
+                        data.ingredientes,
+                        data.tempo,
+                        data.qtdPessoas,
+                        data.custo,
+                        data.imagem
+                    );
+                    this.recipe.id = data.id;
+                } else {
+                    this.error = 'Receita não encontrada';
+                }
+            } catch (error) {
+                console.error('Erro ao carregar receita:', error);
+                this.error = error.message || 'Erro ao carregar receita';
+            } finally {
+                this.loading = false;
             }
         },
         goToPage(path) {
@@ -269,6 +308,37 @@ export default {
 
   .edit-icon:hover .editar_icon {
     filter: brightness(0.8);
+  }
+
+  .loading-container, .error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    min-height: 200px;
+  }
+
+  .error-container p {
+    color: #A12A09;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-voltar {
+    background-color: #A12A09;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  .btn-voltar:hover {
+    background-color: #8a2308;
   }
   
 </style>

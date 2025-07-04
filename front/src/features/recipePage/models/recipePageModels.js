@@ -20,7 +20,13 @@ class Recipe {
             };
         } catch (error) {
             console.error('Error fetching recipe:', error);
-            throw error;
+            if (error.response?.status === 404) {
+                throw new Error('Receita não encontrada');
+            } else if (error.response?.status >= 500) {
+                throw new Error('Erro interno do servidor. Tente novamente mais tarde.');
+            } else {
+                throw new Error('Erro ao carregar receita. Verifique sua conexão.');
+            }
         }
     }
 }

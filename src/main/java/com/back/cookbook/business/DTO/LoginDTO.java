@@ -1,29 +1,23 @@
 package com.back.cookbook.business.DTO;
 
-public class LoginDTO {
-    private String email;
-    private String senha;
-
-    public LoginDTO(){}
-
-    public LoginDTO(String email, String senha){
-        this.email = email;
-        this.senha = senha;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
+/**
+ * DTO imutável para dados de login.
+ * Utiliza record para garantir imutabilidade e thread-safety.
+ * 
+ * @param email Email do usuário
+ * @param senha Senha do usuário
+ */
+public record LoginDTO(String email, String senha) {
+    
+    /**
+     * Construtor compacto com validações básicas para dados sensíveis.
+     */
+    public LoginDTO {
+        if (email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("Email não pode ser nulo ou vazio");
+        }
+        if (senha == null || senha.trim().isEmpty()) {
+            throw new IllegalArgumentException("Senha não pode ser nula ou vazia");
+        }
     }
 }
