@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired(required = true)
@@ -33,7 +33,7 @@ public class UsuarioController {
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginDTO login){
         try{
-            boolean sla = usuarioManager.validaUsuario(login.getEmail(), login.getSenha());
+            boolean sla = usuarioManager.validaUsuario(login.email(), login.senha());
             if(!sla)
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email ou senha inválidos");
             else

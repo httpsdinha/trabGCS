@@ -1,22 +1,32 @@
 <template>
   <header>
-    <h1 @click="goToPage('/')">CookBook</h1>
+    <h1 @click="goToPage('/recipelist')">CookBook</h1>
     <aside class="search responsive-search">
       <section class="input-container">
         <input type="text" class="search-input" placeholder="Pesquisar" @input="onSearchInput" />
         <img class="search-icon" src="@/assets/procurar.png" alt="Search Icon" />
       </section>
     </aside>
-    <div class="user-menu">
-      <img class="usuario" @click="toggleModal" src="@/assets/usuario.png" alt="usuario">
-      <div v-if="showModal" class="dropdown-menu">
-        <button @click="logout">Sair</button>
+    <div class="nav-actions">
+      <button @click="goToPage('/favorites')" class="favorites-link" title="Meus Favoritos">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+        <span class="favorites-text">Favoritos</span>
+      </button>
+      <div class="user-menu">
+        <img class="usuario" @click="toggleModal" src="@/assets/usuario.png" alt="usuario">
+        <div v-if="showModal" class="dropdown-menu">
+          <button @click="logout">Sair</button>
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import AuthService from '@/utils/AuthService';
+
 export default {
   data() {
     return {
@@ -25,6 +35,12 @@ export default {
   },
   methods: {
     goToPage(route) {
+      // Se a rota for para uma página protegida, verifica autenticação
+      if (route === '/recipelist' && !AuthService.isAuthenticated()) {
+        // Se não estiver autenticado, redireciona para login
+        this.$router.push('/');
+        return;
+      }
       this.$router.push(route);
     },
     toggleModal() {
@@ -108,6 +124,45 @@ h1 {
   width: 25px;
   height: 25px;
   cursor: pointer;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favorites-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #940D0D;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease;
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+}
+
+.favorites-link:hover {
+  background-color: rgba(148, 13, 13, 0.1);
+}
+
+.favorites-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .favorites-text {
+    display: none;
+  }
+  
+  .nav-actions {
+    gap: 0.5rem;
+  }
 }
 
 .user-menu {

@@ -9,8 +9,12 @@ O projeto contempla uma interface de usuário para interagir com uma API RESTful
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
-- **npm** (Node Package Manager)
+- *npm* (Node Package Manager)
 - Frameworks/Bibliotecas (ex: Vue.js, React, etc.)
+- **Vuex** para gerenciamento de estado
+
+
+
 
 ### Backend
 - **Java 21** com **Spring Boot**
@@ -43,7 +47,33 @@ git clone https://github.com/httpsdinha/trabGCS.git
 cd trabGCS/
 ```
 
-### 2. Configure e Execute o Backend
+### 2. Configure as Variáveis de Ambiente
+**IMPORTANTE:** Antes de executar o projeto, você deve configurar as variáveis de ambiente:
+
+```bash
+# Copie o arquivo de exemplo para criar seu arquivo de configuração local
+cp .env.example .env
+
+# Edite o arquivo .env com suas configurações específicas
+# Use um editor de texto de sua preferência (ex: nano, vim, notepad, VS Code)
+notepad .env  # Windows
+# ou
+nano .env     # Linux/Mac
+```
+
+O arquivo `.env` contém as seguintes variáveis que devem ser configuradas:
+- `SPRING_DATASOURCE_URL`: URL de conexão com o banco de dados do Spring Boot
+- `SPRING_DATASOURCE_USERNAME`: Usuário do banco de dados para Spring Boot
+- `SPRING_DATASOURCE_PASSWORD`: Senha do banco de dados para Spring Boot
+- `JPA_DATABASE_URL`: URL de conexão com o banco de dados para JPA/Persistence
+- `JPA_DATABASE_USERNAME`: Usuário do banco de dados para JPA
+- `JPA_DATABASE_PASSWORD`: Senha do banco de dados para JPA
+- `SERVER_PORT`: Porta do servidor (padrão: 8080)
+- `CORS_ALLOWED_ORIGINS`: Origens permitidas para CORS
+
+> **⚠️ Atenção de Segurança:** O arquivo `.env` contém informações sensíveis e **NÃO deve ser versionado**. Ele já está incluído no `.gitignore` para evitar commits acidentais.
+
+### 3. Configure e Execute o Backend
 O backend é servido via Docker, o que simplifica muito o processo.
 
 ```bash
@@ -55,7 +85,7 @@ docker-compose up --build
 ```
 Após executar o comando, o Docker fará o download das imagens, construirá os containers e iniciará a API e o banco de dados. O backend estará pronto para receber requisições.
 
-### 3. Configure e Execute o Frontend
+### 4. Configure e Execute o Frontend
 Em um **novo terminal**, navegue até a pasta do frontend para instalar as dependências e iniciar o servidor de desenvolvimento.
 
 ```bash
@@ -69,5 +99,23 @@ npm install
 npm run serve
 ```
 
-Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:8080` ou similar).
+Pronto! Agora a aplicação frontend estará rodando e se comunicando com o backend. Você poderá acessar a interface no endereço fornecido pelo `npm run serve` (geralmente `http://localhost:3000` ou similar).
 
+---
+
+## 🔒 Configuração de Segurança
+
+Este projeto implementa boas práticas de segurança para o gerenciamento de credenciais:
+
+### Variáveis de Ambiente
+- As credenciais de banco de dados e outras informações sensíveis são gerenciadas através de variáveis de ambiente
+- O arquivo `.env` (que contém as credenciais reais) **nunca deve ser commitado** no repositório
+- Use sempre o arquivo `.env.example` como modelo para criar seu `.env` local
+
+### Primeiros Passos de Segurança
+1. **Sempre** copie `.env.example` para `.env` antes de executar o projeto
+2. **Nunca** commite o arquivo `.env` no Git
+3. **Mantenha** suas credenciais seguras e não as compartilhe
+4. **Use** credenciais diferentes para desenvolvimento, teste e produção
+
+---

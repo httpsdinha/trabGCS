@@ -13,9 +13,9 @@
         <properties>
             <!-- Propriedades JDBC -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/banco_postgres_cb" />
-            <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="postgres" />
+            <property name="javax.persistence.jdbc.url" value="${JPA_DATABASE_URL}" />
+            <property name="javax.persistence.jdbc.user" value="${JPA_DATABASE_USERNAME}" />
+            <property name="javax.persistence.jdbc.password" value="${JPA_DATABASE_PASSWORD}" />
             <!-- Configurações específicas do Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" />
