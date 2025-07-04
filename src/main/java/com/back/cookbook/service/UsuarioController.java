@@ -1,6 +1,7 @@
 package com.back.cookbook.service;
 
 import com.back.cookbook.business.DTO.LoginDTO;
+import com.back.cookbook.business.DTO.UsuarioDTO;
 import com.back.cookbook.business.UsuarioManager;
 import com.back.cookbook.dataac.entity.UsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,12 +46,15 @@ public class UsuarioController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<UsuarioEntity> buscarUsuario(@RequestParam String email) {
+    public ResponseEntity<UsuarioDTO> buscarUsuario(@RequestParam String email) {
         try {
             UsuarioEntity usuario = usuarioManager.findByEmail(email);
             if (usuario != null) {
                 usuario.setReceitas(null); // Prevent sending receitas
-                return ResponseEntity.ok(usuario);
+
+                UsuarioDTO dto = new UsuarioDTO(usuario.getId(), usuario.getNome(), usuario.getNome(), usuario.getReceitas());
+
+                return ResponseEntity.ok(dto);
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
