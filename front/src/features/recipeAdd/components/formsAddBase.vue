@@ -6,18 +6,18 @@
         <p>* Todos os filtros são obrigatórios</p>
       </div>
     </nav>
-    <label for="name">Nome da Receita *</label>
+    <label for="name">Nome da Receita</label>
     <input type="text" id="input-name" class="add-input-nome" v-model="nome" :class="{ 'field-error': !nome }"/>
     
-    <label for="ingrediente">Ingredientes *</label>
+    <label for="ingrediente">Ingredientes</label>
     <textarea id="input-ingrediente" class="add-input-ingrediente" v-model="ingredientes" :class="{ 'field-error': !ingredientes }"></textarea>
     
-    <label for="preparo">Modo de Preparo *</label>
+    <label for="preparo">Modo de Preparo</label>
     <textarea id="input-preparo" class="add-input-preparo" v-model="modo_prep" :class="{ 'field-error': !modo_prep }"></textarea>
         
     <article class="add-select-containeimage">
       <input type="file" id="image-upload" class="image-upload" @change="handleImageUpload" accept="image/*" />
-      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem *</label>
+      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem</label>
       <p v-if="imageName" class="image-name">{{ imageName }}</p>
       <p v-if="!imageName" class="image-required">* Campo obrigatório</p>
     </article>
@@ -119,6 +119,7 @@ label::after {
     background: transparent;
     border: 1px solid #940D0D;
     transition: border-color 0.3s ease;
+    font-family: var(--font-family-base);
 }
 
 .field-error {
