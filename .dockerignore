@@ -1,23 +1,29 @@
-# Ignore frontend node_modules
-front/node_modules
-front/dist
-front/.git
+# Node modules
+front/node_modules/
+**/node_modules/
 
-# Ignore Maven target directory
-target
+# Build outputs
+front/dist/
+front/build/
 
-# Ignore IDE files
-.idea
-*.iml
-.vscode
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
 
-# Ignore OS files
+# OS files
 .DS_Store
 Thumbs.db
 
-# Ignore logs
-*.log
+# Git
+.git/
+.gitignore
 
-# Ignore temporary files
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
 *.tmp
 *.temp
