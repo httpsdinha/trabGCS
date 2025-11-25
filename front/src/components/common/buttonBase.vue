@@ -9,21 +9,21 @@ export default {
   props: {
     width: {
       type: String,
-      default: '100%',
+      default: "100%",
     },
     maxWidth: {
       type: String,
-      default: '7.0625rem',
+      default: "7.0625rem",
     },
     height: {
       type: String,
-      default: '1.5625rem',
+      default: "1.5625rem",
     },
   },
   computed: {
     computedClass() {
       return {
-        'button-base': true,
+        "button-base": true,
       };
     },
     computedStyle() {
@@ -40,14 +40,13 @@ export default {
 <style scoped>
 .button-base {
   border: none;
-  cursor: pointer;
-  background: linear-gradient(90deg, #A12A09 0%, #940D0D 100%);
+  background: linear-gradient(90deg, #a12a09 0%, #940d0d 100%);
   font-family: "Jost";
-  color: #FFF;
-  border-radius: 0.3125rem ;
+  color: #fff;
+  border-radius: 0.3125rem;
 }
 
 .button-base:hover {
-  background: #A12A09;
+  background: #a12a09;
 }
 </style>

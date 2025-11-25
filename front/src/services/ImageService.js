@@ -1,8 +1,11 @@
-import axiosInstance from '@/plugins/axios';
+import axiosInstance from "@/plugins/axios";
 
 /**
  * Serviço para gerenciar imagens de receitas
  */
+const ALLOWED_EXTENSIONS = [".jpg", ".jpeg", ".png", ".gif", ".webp"];
+const MAX_SIZE = 5 * 1024 * 1024; // 5MB
+
 class ImageService {
   /**
    * Constrói a URL completa para uma imagem
@@ -28,7 +31,9 @@ class ImageService {
     }
 
     try {
-      const response = await fetch(this.getImageUrl(imageName), { method: 'HEAD' });
+      const response = await fetch(this.getImageUrl(imageName), {
+        method: "HEAD",
+      });
       return response.ok;
     } catch (error) {
       console.warn(`Imagem não encontrada: ${imageName}`);
@@ -44,7 +49,7 @@ class ImageService {
    */
   static async getImageWithFallback(imageName, fallbackUrl = null) {
     const imageUrl = this.getImageUrl(imageName);
-    
+
     if (!imageUrl) {
       return fallbackUrl;
     }
@@ -59,30 +64,10 @@ class ImageService {
    * @returns {boolean} True se for uma imagem válida
    */
   static validateImageFile(file) {
-    if (!file) {
-      return false;
-    }
-
-    // Verifica o tipo MIME
-    if (!file.type.startsWith('image/')) {
-      return false;
-    }
-
-    // Verifica extensões permitidas
-    const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-    const fileName = file.name.toLowerCase();
-    const hasValidExtension = allowedExtensions.some(ext => fileName.endsWith(ext));
-
-    if (!hasValidExtension) {
-      return false;
-    }
-
-    // Verifica tamanho (máximo 5MB)
-    const maxSize = 5 * 1024 * 1024; // 5MB
-    if (file.size > maxSize) {
-      return false;
-    }
-
+    if (!file) return false;
+    if (!isMimeTypeValid(file)) return false;
+    if (!hasAllowedExtension(file.name)) return false;
+    if (!isSizeValid(file)) return false;
     return true;
   }
 
@@ -92,29 +77,31 @@ class ImageService {
    * @returns {string} Mensagem de erro formatada
    */
   static getValidationErrorMessage(file) {
-    if (!file) {
-      return 'Nenhum arquivo selecionado.';
-    }
-
-    if (!file.type.startsWith('image/')) {
-      return 'Por favor, selecione apenas arquivos de imagem.';
-    }
-
-    const allowedExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
-    const fileName = file.name.toLowerCase();
-    const hasValidExtension = allowedExtensions.some(ext => fileName.endsWith(ext));
-
-    if (!hasValidExtension) {
-      return 'Formato de arquivo não suportado. Use: JPG, JPEG, PNG, GIF ou WebP.';
-    }
-
-    const maxSize = 5 * 1024 * 1024; // 5MB
-    if (file.size > maxSize) {
-      return 'Arquivo muito grande. Tamanho máximo: 5MB.';
-    }
-
-    return 'Arquivo de imagem inválido.';
+    if (!file) return "Nenhum arquivo selecionado.";
+    if (!isMimeTypeValid(file))
+      return "Por favor, selecione apenas arquivos de imagem.";
+    if (!hasAllowedExtension(file.name))
+      return "Formato de arquivo não suportado. Use: JPG, JPEG, PNG, GIF ou WebP.";
+    if (!isSizeValid(file)) return "Arquivo muito grande. Tamanho máximo: 5MB.";
+    return "Arquivo de imagem inválido.";
   }
+}
+
+// Funções auxiliares pequenas para diminuir a complexidade ciclomática
+function isMimeTypeValid(file) {
+  return !!file.type && file.type.startsWith("image/");
+}
+
+function hasAllowedExtension(fileName) {
+  if (!fileName) {
+    return false;
+  }
+  const lower = fileName.toLowerCase();
+  return ALLOWED_EXTENSIONS.some((ext) => lower.endsWith(ext));
+}
+
+function isSizeValid(file) {
+  return typeof file.size === "number" && file.size <= MAX_SIZE;
 }
 
 export default ImageService;

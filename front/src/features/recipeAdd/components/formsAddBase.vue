@@ -1,33 +1,73 @@
 <template>
   <form @submit.prevent="submitForm" enctype="multipart/form-data">
     <nav class="filters-container">
-      <filters-base @valueChange="custo = $event" @timeChange="tempo = $event" @serveChange="qtd_pessoas = $event" />
-      <div v-if="custo === '0' || tempo === '0' || qtd_pessoas === '0'" class="filters-warning">
+      <filters-base
+        @valueChange="custo = $event"
+        @timeChange="tempo = $event"
+        @serveChange="qtd_pessoas = $event"
+      />
+      <div
+        v-if="custo === '0' || tempo === '0' || qtd_pessoas === '0'"
+        class="filters-warning"
+      >
         <p>* Todos os filtros são obrigatórios</p>
       </div>
     </nav>
     <label for="name">Nome da Receita *</label>
-    <input type="text" id="input-name" class="add-input-nome" v-model="nome" :class="{ 'field-error': !nome }"/>
-    
+    <input
+      type="text"
+      id="input-name"
+      class="add-input-nome"
+      v-model="nome"
+      :class="{ 'field-error': !nome }"
+    />
+
     <label for="ingrediente">Ingredientes *</label>
-    <textarea id="input-ingrediente" class="add-input-ingrediente" v-model="ingredientes" :class="{ 'field-error': !ingredientes }"></textarea>
-    
+    <textarea
+      id="input-ingrediente"
+      class="add-input-ingrediente"
+      v-model="ingredientes"
+      :class="{ 'field-error': !ingredientes }"
+    ></textarea>
+
     <label for="preparo">Modo de Preparo *</label>
-    <textarea id="input-preparo" class="add-input-preparo" v-model="modo_prep" :class="{ 'field-error': !modo_prep }"></textarea>
-        
+    <textarea
+      id="input-preparo"
+      class="add-input-preparo"
+      v-model="modo_prep"
+      :class="{ 'field-error': !modo_prep }"
+    ></textarea>
+
     <article class="add-select-containeimage">
-      <input type="file" id="image-upload" class="image-upload" @change="handleImageUpload" accept="image/*" />
-      <label for="image-upload" class="image-upload-label" :class="{ 'field-error': !imageName }">enviar imagem *</label>
+      <input
+        type="file"
+        id="image-upload"
+        class="image-upload"
+        @change="handleImageUpload"
+        accept="image/*"
+      />
+      <label
+        for="image-upload"
+        class="image-upload-label flex-center"
+        :class="{ 'field-error': !imageName }"
+        >enviar imagem *</label
+      >
       <p v-if="imageName" class="image-name">{{ imageName }}</p>
       <p v-if="!imageName" class="image-required">* Campo obrigatório</p>
     </article>
-    <button type="submit" class="add-button-adicionar" :disabled="isFormIncomplete">ADICIONAR</button>
+    <button
+      type="submit"
+      class="add-button-adicionar"
+      :disabled="isFormIncomplete"
+    >
+      ADICIONAR
+    </button>
     <AlertBox :show="showAlert" @close="closeAlert" />
   </form>
 </template>
 
 <script>
-import { useRecipeAddViewModel } from '../viewmodels/RecipeAddViewModel';
+import { useRecipeAddViewModel } from "../viewmodels/RecipeAddViewModel";
 export default {
   setup() {
     const {
@@ -42,13 +82,13 @@ export default {
       handleImageUpload,
       submitForm,
       showAlert,
-      closeAlert, 
+      closeAlert,
     } = useRecipeAddViewModel();
 
     const enhancedHandleImageUpload = () => {
-      const file = document.querySelector('#image-upload').files[0];
+      const file = document.querySelector("#image-upload").files[0];
       handleImageUpload({ target: { files: [file] } });
-      console.log('Imagem selecionada:', file);
+      console.log("Imagem selecionada:", file);
     };
 
     return {
@@ -70,88 +110,87 @@ export default {
 </script>
 
 <style scoped>
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    width: 80%; 
-    margin: 0 auto; 
-    padding-bottom: 5em;
-    position: relative; 
+.form {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 5em;
 }
 
 .filters-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .filters-warning {
-    margin-top: 0.5rem;
-    text-align: center;
+  margin-top: 0.5rem;
+  text-align: center;
 }
 
 .filters-warning p {
-    color: #ff0000;
-    font-size: 0.8rem;
-    font-family: 'Jost';
-    margin: 0;
+  color: #ff0000;
+  font-size: 0.8rem;
+  font-family: "Jost";
+  margin: 0;
 }
 
 label {
-    margin-top: 0.5rem;
-    margin-bottom: 0rem;
-    color: #000;
-    font-family: "Jost";
-    font-size: 0.9rem;
-    font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+  color: #000;
+  font-family: "Jost";
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 label::after {
-    content: " *";
-    color: #940D0D;
-    font-weight: bold;
+  content: " *";
+  color: #940d0d;
+  font-weight: bold;
 }
 
-.add-input-nome, .add-input-ingrediente, .add-input-preparo {
-    border-radius: 0.3125rem;
-    background: transparent;
-    border: 1px solid #940D0D;
-    transition: border-color 0.3s ease;
+.add-input-nome,
+.add-input-ingrediente,
+.add-input-preparo {
+  border-radius: 0.3125rem;
+  background: transparent;
+  border: 1px solid #940d0d;
+  transition: border-color 0.3s ease;
 }
 
 .field-error {
-    border: 2px solid #ff0000 !important;
-    background-color: #fff5f5;
+  border: 2px solid #ff0000 !important;
+  background-color: #fff5f5;
 }
 
-.add-input-nome{
-    width: 100%; 
-    height: 5vh;
-    padding:0.5rem;
+.add-input-nome {
+  width: 100%;
+  height: 5vh;
+  padding: 0.5rem;
 }
 
-.add-input-preparo, .add-input-ingrediente {
-    width: 100%;
-    height: 10vh;
-    padding:0.5rem;
+.add-input-preparo,
+.add-input-ingrediente {
+  width: 100%;
+  height: 10vh;
+  padding: 0.5rem;
 }
 
-.add-button-adicionar{
-    border-radius: 0.3125rem;
-    background: linear-gradient(90deg, #A12A09 0%, #940D0D 100%);
-    width: 6.1875rem;
-    height: 1.75rem;
-    border:none;
-    color: #FFF;
-    font-family: "Jockey One";
-    font-size: 0.9375rem;
-    position: absolute; 
-    bottom: 1rem; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    cursor: pointer;
+.add-button-adicionar {
+  border-radius: 0.3125rem;
+  background: linear-gradient(90deg, #a12a09 0%, #940d0d 100%);
+  width: 6.1875rem;
+  height: 1.75rem;
+  border: none;
+  color: #fff;
+  font-family: "Jockey One";
+  font-size: 0.9375rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .add-button-adicionar:disabled {
@@ -171,39 +210,32 @@ label::after {
 }
 
 .image-upload-label {
-  width: 8rem; 
-  height: 2rem; 
+  width: 8rem;
+  height: 2rem;
   border-radius: 0.3125rem;
-  border: 1px solid #940D0D;
-  cursor: pointer;
+  border: 1px solid #940d0d;
   color: #000;
-  font-family: 'Jost'; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: "Jost";
 }
 
 .add-select-containeimage {
-  display: flex;
   flex-direction: column;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   width: 8rem;
-  margin-left: 0; 
+  margin-left: 0;
 }
 
 .image-name {
   font-size: 0.6rem;
-  font-family: 'Jura';
+  font-family: "Jura";
   color: #000;
-  display: flex;
   justify-content: center;
 }
 
 .image-required {
   font-size: 0.6rem;
-  font-family: 'Jura';
+  font-family: "Jura";
   color: #ff0000;
-  display: flex;
   justify-content: center;
   margin-top: 0.2rem;
 }

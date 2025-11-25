@@ -8,3 +8,9 @@ body {
     background-color: #d9d9d9;
     overflow: auto;
 }
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

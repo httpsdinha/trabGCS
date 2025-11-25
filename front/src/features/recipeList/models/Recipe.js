@@ -1,6 +1,15 @@
 //estrutura da receita no banco de dados
 export default class Recipe {
-  constructor({ id, nome, modo_prep, ingredientes, tempo, qtdPessoas, custo, imagem }) {
+  constructor({
+    id,
+    nome,
+    modo_prep,
+    ingredientes,
+    tempo,
+    qtdPessoas,
+    custo,
+    imagem,
+  }) {
     this.id = id;
     this.nome = nome;
     this.modo_prep = modo_prep;

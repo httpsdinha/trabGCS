@@ -1,8 +1,7 @@
-
 export default class CadastroModel {
-    constructor() {
-        this.email = '';
-        this.password = '';
-        this.confirmPassword = '';
-    }
+  constructor() {
+    this.email = "";
+    this.password = "";
+    this.confirmPassword = "";
+  }
 }

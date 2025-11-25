@@ -1,21 +1,48 @@
 <template>
   <header>
     <h1 @click="goToPage('/recipelist')">CookBook</h1>
-    <aside class="search responsive-search">
+    <aside class="search responsive-search flex-center">
       <section class="input-container">
-        <input type="text" class="search-input" placeholder="Pesquisar" @input="onSearchInput" />
-        <img class="search-icon" src="@/assets/procurar.png" alt="Search Icon" />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Pesquisar"
+          @input="onSearchInput"
+        />
+        <img
+          class="search-icon"
+          src="@/assets/procurar.png"
+          alt="Search Icon"
+        />
       </section>
     </aside>
     <div class="nav-actions">
-      <button @click="goToPage('/favorites')" class="favorites-link" title="Meus Favoritos">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      <button
+        @click="goToPage('/favorites')"
+        class="favorites-link"
+        title="Meus Favoritos"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+          />
         </svg>
         <span class="favorites-text">Favoritos</span>
       </button>
       <div class="user-menu">
-        <img class="usuario" @click="toggleModal" src="@/assets/usuario.png" alt="usuario">
+        <img
+          class="usuario"
+          @click="toggleModal"
+          src="@/assets/usuario.png"
+          alt="usuario"
+        />
         <div v-if="showModal" class="dropdown-menu">
           <button @click="logout">Sair</button>
         </div>
@@ -25,20 +52,20 @@
 </template>
 
 <script>
-import AuthService from '@/utils/AuthService';
+import AuthService from "@/utils/AuthService";
 
 export default {
   data() {
     return {
-      showModal: false
+      showModal: false,
     };
   },
   methods: {
     goToPage(route) {
       // Se a rota for para uma página protegida, verifica autenticação
-      if (route === '/recipelist' && !AuthService.isAuthenticated()) {
+      if (route === "/recipelist" && !AuthService.isAuthenticated()) {
         // Se não estiver autenticado, redireciona para login
-        this.$router.push('/');
+        this.$router.push("/");
         return;
       }
       this.$router.push(route);
@@ -47,19 +74,18 @@ export default {
       this.showModal = !this.showModal;
     },
     logout() {
-      localStorage.removeItem('userEmail');
-      this.$router.push('/');
+      localStorage.removeItem("userEmail");
+      this.$router.push("/");
     },
     onSearchInput(event) {
-      this.$emit('search', event.target.value);
-    }
-  }
-}
+      this.$emit("search", event.target.value);
+    },
+  },
+};
 </script>
 
 <style scoped>
 header {
-  display: flex;
   justify-content: space-between; /* Changed from center to space-between */
   align-items: center;
   padding: 1.5rem 5%;
@@ -71,24 +97,18 @@ header {
 
 h1 {
   color: #fff;
-  font-family: 'Jost';
+  font-family: "Jost";
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  cursor: pointer;
 }
 
 .search {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 }
 
 .input-container {
-  position: relative;
   width: 80%;
   max-width: 39.4375rem;
 }
@@ -105,7 +125,6 @@ h1 {
 }
 
 .search-icon {
-  cursor: pointer;
   position: absolute;
   left: 10px;
   top: 50%;
@@ -115,7 +134,6 @@ h1 {
 }
 
 .responsive-search {
-  display: flex;
   align-items: center;
   width: 100%;
 }
@@ -123,27 +141,23 @@ h1 {
 .usuario {
   width: 25px;
   height: 25px;
-  cursor: pointer;
 }
 
 .nav-actions {
-  display: flex;
   align-items: center;
   gap: 1rem;
 }
 
 .favorites-link {
-  display: flex;
   align-items: center;
   gap: 0.5rem;
   background: none;
   border: none;
-  color: #940D0D;
-  cursor: pointer;
+  color: #940d0d;
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
   font-weight: 600;
 }
 
@@ -159,14 +173,10 @@ h1 {
   .favorites-text {
     display: none;
   }
-  
+
   .nav-actions {
     gap: 0.5rem;
   }
-}
-
-.user-menu {
-  position: relative;
 }
 
 .dropdown-menu {
@@ -183,10 +193,9 @@ h1 {
   border-radius: 0.3125rem;
   border: none;
   padding: 10px 20px;
-  cursor: pointer;
   width: 100%;
   text-align: left;
-  color: #940D0D;
+  color: #940d0d;
   font-family: "Jura";
   font-size: 0.8125rem;
   font-weight: 700;

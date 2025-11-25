@@ -7,13 +7,13 @@
 </template>
 
 <script>
-import LeftComponent from '@/features/landing/components/LeftComponent.vue';
-import RightComponent from '@/features/landing/components/RightComponent.vue';
-import LoginComponent from '@/features/landing/components/LoginComponent.vue';
-import LandingPageViewModel from '@/features/landing/viewmodels/LandingPageViewModel.js';
+import LeftComponent from "@/features/landing/components/LeftComponent.vue";
+import RightComponent from "@/features/landing/components/RightComponent.vue";
+import LoginComponent from "@/features/landing/components/LoginComponent.vue";
+import LandingPageViewModel from "@/features/landing/viewmodels/LandingPageViewModel.js";
 
 export default {
-  name: 'LandingPage',
+  name: "LandingPage",
   components: {
     LeftComponent,
     RightComponent,
@@ -31,11 +31,9 @@ export default {
 
 <style scoped>
 .landing-page {
-  display: flex;
   justify-content: space-between;
   width: 100dvw;
   height: 100dvh;
-  position: relative;
 }
 
 .left-half {
@@ -77,4 +75,3 @@ export default {
   }
 }
 </style>
-

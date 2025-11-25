@@ -1,9 +1,9 @@
 <template>
-  <header-component/>
-  <main class="main-container">
+  <header-component />
+  <main class="main-container flex-center">
     <section class="add-form-container">
       <div class="header-section">
-        <button class="back-button" @click="goBack" title="Voltar">
+        <button class="back-button flex-center" @click="goBack" title="Voltar">
           <img src="@/assets/arrow.png" alt="Voltar" class="back-icon" />
         </button>
         <h2>ADICIONAR RECEITA</h2>
@@ -15,17 +15,14 @@
 </template>
 
 <script>
-import { useRecipeAddViewModel } from '../viewmodels/RecipeAddViewModel';
-import { useRouter } from 'vue-router';
+import { useRecipeAddViewModel } from "../viewmodels/RecipeAddViewModel";
+import { useRouter } from "vue-router";
 
 export default {
   setup() {
     const router = useRouter();
-    
-    const {
-      successMessage,
-      submitForm,
-    } = useRecipeAddViewModel();
+
+    const { successMessage, submitForm } = useRecipeAddViewModel();
 
     const goBack = () => {
       // Primeira opção: volta para a página anterior no histórico
@@ -33,7 +30,7 @@ export default {
         router.go(-1);
       } else {
         // Fallback: vai para a página de lista de receitas
-        router.push('/recipelist');
+        router.push("/recipelist");
       }
     };
 
@@ -48,28 +45,22 @@ export default {
 
 <style scoped>
 .main-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 85dvh; 
+  height: 85dvh;
 }
 
 .add-form-container {
-  display: flex; 
-  flex-direction: column; 
+  flex-direction: column;
   width: 70%;
   max-width: 60rem;
   height: 95%;
   max-height: 45rem;
   border-radius: 1.25rem;
-  background: #FFF;
+  background: #fff;
   box-shadow: -11px 11px 16.1px 3px rgba(0, 0, 0, 0.25);
 }
 
 .header-section {
-  display: flex;
   align-items: center;
-  position: relative;
   padding: 0 2rem;
   margin-top: 6dvh;
 }
@@ -78,37 +69,25 @@ export default {
   position: absolute;
   left: 2rem;
 
-
-
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   padding: 0.75rem;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
 }
 
 .back-button:hover {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.15),
-    0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
   transform: translateY(-1px);
 }
 
 .back-button:active {
   transform: translateY(0);
-  box-shadow: 
-    0 2px 8px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .back-icon {
@@ -165,7 +144,9 @@ h2 {
     font-size: 1.3rem;
   }
 
-  .add-input-nome, .add-input-ingrediente, .add-input-preparo {
+  .add-input-nome,
+  .add-input-ingrediente,
+  .add-input-preparo {
     width: 100%;
   }
 

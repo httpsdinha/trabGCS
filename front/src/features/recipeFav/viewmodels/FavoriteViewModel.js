@@ -1,5 +1,5 @@
-import { ref } from 'vue';
-import FavoriteModel from '../models/FavoriteModel';
+import { ref } from "vue";
+import FavoriteModel from "../models/FavoriteModel";
 
 export function useFavoriteViewModel() {
   const favoriteModel = new FavoriteModel();
@@ -13,7 +13,7 @@ export function useFavoriteViewModel() {
       const data = await favoriteModel.getFavorites();
       favorites.value = data;
     } catch (error) {
-      console.error('Erro ao buscar favoritos:', error);
+      console.error("Erro ao buscar favoritos:", error);
     } finally {
       loading.value = false;
     }
@@ -23,18 +23,20 @@ export function useFavoriteViewModel() {
   const toggleFavorite = async (recipeId) => {
     try {
       const isFav = await favoriteModel.isFavorite(recipeId);
-      
+
       if (isFav) {
         await favoriteModel.removeFavorite(recipeId);
         // Remove da lista local se estiver na página de favoritos
-        favorites.value = favorites.value.filter(recipe => recipe.id !== recipeId);
+        favorites.value = favorites.value.filter(
+          (recipe) => recipe.id !== recipeId
+        );
         return false;
       } else {
         await favoriteModel.addFavorite(recipeId);
         return true;
       }
     } catch (error) {
-      console.error('Erro ao alternar favorito:', error);
+      console.error("Erro ao alternar favorito:", error);
       throw error;
     }
   };
@@ -44,7 +46,7 @@ export function useFavoriteViewModel() {
     try {
       return await favoriteModel.isFavorite(recipeId);
     } catch (error) {
-      console.error('Erro ao verificar favorito:', error);
+      console.error("Erro ao verificar favorito:", error);
       return false;
     }
   };
@@ -54,6 +56,6 @@ export function useFavoriteViewModel() {
     loading,
     fetchFavorites,
     toggleFavorite,
-    checkIsFavorite
+    checkIsFavorite,
   };
 }

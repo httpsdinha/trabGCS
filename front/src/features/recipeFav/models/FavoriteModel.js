@@ -1,20 +1,20 @@
-import axiosInstance from '@/plugins/axios';
+import axiosInstance from "@/plugins/axios";
 
 export default class FavoriteModel {
   constructor() {
-    this.userEmail = localStorage.getItem('userEmail');
+    this.userEmail = localStorage.getItem("userEmail");
   }
 
   // Adicionar receita aos favoritos
   async addFavorite(recipeId) {
     try {
-      const response = await axiosInstance.post('/favorito/adicionar', {
+      const response = await axiosInstance.post("/favorito/adicionar", {
         email: this.userEmail,
-        receitaId: recipeId
+        receitaId: recipeId,
       });
       return response.data;
     } catch (error) {
-      console.error('Erro ao adicionar favorito:', error);
+      console.error("Erro ao adicionar favorito:", error);
       throw error;
     }
   }
@@ -22,15 +22,15 @@ export default class FavoriteModel {
   // Remover receita dos favoritos
   async removeFavorite(recipeId) {
     try {
-      const response = await axiosInstance.delete('/favorito/remover', {
+      const response = await axiosInstance.delete("/favorito/remover", {
         data: {
           email: this.userEmail,
-          receitaId: recipeId
-        }
+          receitaId: recipeId,
+        },
       });
       return response.data;
     } catch (error) {
-      console.error('Erro ao remover favorito:', error);
+      console.error("Erro ao remover favorito:", error);
       throw error;
     }
   }
@@ -38,14 +38,14 @@ export default class FavoriteModel {
   // Buscar favoritos do usuário
   async getFavorites() {
     try {
-      const response = await axiosInstance.get('/favorito/listar', {
+      const response = await axiosInstance.get("/favorito/listar", {
         params: {
-          email: this.userEmail
-        }
+          email: this.userEmail,
+        },
       });
       return response.data;
     } catch (error) {
-      console.error('Erro ao buscar favoritos:', error);
+      console.error("Erro ao buscar favoritos:", error);
       throw error;
     }
   }
@@ -53,15 +53,15 @@ export default class FavoriteModel {
   // Verificar se uma receita é favorita
   async isFavorite(recipeId) {
     try {
-      const response = await axiosInstance.get('/favorito/verificar', {
+      const response = await axiosInstance.get("/favorito/verificar", {
         params: {
           email: this.userEmail,
-          receitaId: recipeId
-        }
+          receitaId: recipeId,
+        },
       });
       return response.data;
     } catch (error) {
-      console.error('Erro ao verificar favorito:', error);
+      console.error("Erro ao verificar favorito:", error);
       return false;
     }
   }
