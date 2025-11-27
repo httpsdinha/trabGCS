@@ -9,28 +9,36 @@
       />
     </div>
     <div class="filters-right">
-      <img src="@/assets/adicionar.png" class="button-adicionar" @click="goToPage('/add')" >
+      <img
+        src="@/assets/adicionar.png"
+        class="button-adicionar"
+        @click="goToPage('/add')"
+      />
     </div>
   </nav>
 
   <main>
     <section class="recipes-container">
-      <aviso-vazio v-if="filteredRecipes.length === 0"/>
-      <recipe-card v-for="recipe in filteredRecipes" :key="recipe.id" :recipe="recipe" />
+      <aviso-vazio v-if="filteredRecipes.length === 0" />
+      <recipe-card
+        v-for="recipe in filteredRecipes"
+        :key="recipe.id"
+        :recipe="recipe"
+      />
     </section>
   </main>
 </template>
 
 <script>
-import { useRecipeListViewModel } from '../viewmodels/RecipeListViewModel';
-import RecipeCard from '../components/RecipeCard.vue';
-import AvisoVazio from '../components/AvisoVazio.vue';
+import { useRecipeListViewModel } from "../viewmodels/RecipeListViewModel";
+import RecipeCard from "../components/RecipeCard.vue";
+import AvisoVazio from "../components/AvisoVazio.vue";
 
 export default {
   name: "HomePage",
   components: {
     RecipeCard,
-    AvisoVazio
+    AvisoVazio,
   },
   setup() {
     const {
@@ -40,13 +48,13 @@ export default {
       fetchRecipes,
       handleValueChange,
       handleTimeChange,
-      handleServeChange
+      handleServeChange,
     } = useRecipeListViewModel();
 
     fetchRecipes();
 
     const handleSearch = (searchTerm) => {
-      filteredRecipes.value = recipes.value.filter(recipe =>
+      filteredRecipes.value = recipes.value.filter((recipe) =>
         recipe.nome.toLowerCase().includes(searchTerm.toLowerCase())
       );
     };
@@ -58,28 +66,27 @@ export default {
       handleValueChange,
       handleTimeChange,
       handleServeChange,
-      handleSearch
+      handleSearch,
     };
   },
   methods: {
     goToPage(route) {
       this.$router.push(route);
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .filters {
-  display: flex;
   justify-content: space-between;
-  align-items: center; 
-  width: 100%; 
+  align-items: center;
+  width: 100%;
   padding: 0.5rem 3rem;
 }
 
-.filters-left, .filters-right {
-  display: flex;
+.filters-left,
+.filters-right {
   align-items: center;
 }
 
@@ -91,11 +98,9 @@ export default {
   max-width: 31.625rem;
   height: auto;
   flex-shrink: 0;
-  display: flex;
   width: calc(100% - 0.5rem);
   box-sizing: border-box;
   margin: 0 0.5rem 1rem 0.5rem;
-  position: relative;
 }
 
 .button-ver {
@@ -112,19 +117,16 @@ export default {
 }
 
 .recipes-container {
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 100%;
   overflow: hidden;
-
 }
 
 .button-adicionar {
   width: 25px;
   height: 25px;
-  cursor: pointer;
 }
 
 .recipe-details {
@@ -142,7 +144,7 @@ export default {
   font-weight: 600;
   line-height: normal;
   margin-bottom: 0.5rem;
-  text-align: left; 
+  text-align: left;
 }
 
 p {
@@ -161,13 +163,13 @@ p {
 
 @media (max-width: 1800px) {
   .recipe {
-    width: calc(33.33% - 3rem); 
+    width: calc(33.33% - 3rem);
   }
 }
 
 @media (max-width: 1500px) {
   .recipe {
-    width: calc(100% - 1rem); 
+    width: calc(100% - 1rem);
   }
 }
 
@@ -176,7 +178,7 @@ p {
     width: calc(100% - 0.5rem);
   }
 
-  .filters{
+  .filters {
     padding: 0 1px;
   }
 }

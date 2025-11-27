@@ -1,5 +1,5 @@
-import LandingPageModel from '@/features/landing/models/LandingPageModel.js';
-import axiosInstance from '@/plugins/axios';
+import LandingPageModel from "@/features/landing/models/LandingPageModel.js";
+import axiosInstance from "@/plugins/axios";
 
 export default {
   data() {
@@ -40,38 +40,42 @@ export default {
     async handleLogin(email, senha) {
       // Validação básica
       if (!email || !senha) {
-        alert('Por favor, preencha todos os campos');
+        alert("Por favor, preencha todos os campos");
         return;
       }
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
-        alert('Por favor, insira um email válido');
+        alert("Por favor, insira um email válido");
         return;
       }
 
       try {
-        const response = await axiosInstance.post('/usuario/login', {
-          email: email,
-          senha: senha
-        }, {
-          headers: {
-            'Content-Type': 'application/json',
+        const response = await axiosInstance.post(
+          "/usuario/login",
+          {
+            email: email,
+            senha: senha,
           },
-        });
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
-        if (response.status === 200 && response.data === 'Login válido') {
-          localStorage.setItem('userEmail', email);
-          
+        if (response.status === 200 && response.data === "Login válido") {
+          localStorage.setItem("userEmail", email);
+
           // Verifica se há uma rota de redirecionamento salva
-          const redirectTo = this.$route.query.redirect || '/recipelist';
+          const redirectTo = this.$route.query.redirect || "/recipelist";
           this.$router.push(redirectTo);
         } else {
-          alert('Email ou senha inválidos');
+          alert("Email ou senha inválidos");
         }
       } catch (error) {
-        console.error('Erro no login:', error);
-        alert('Erro interno do servidor. Tente novamente.');
+        console.error("Erro no login:", error);
+        alert("Erro interno do servidor. Tente novamente.");
       }
     },
   },

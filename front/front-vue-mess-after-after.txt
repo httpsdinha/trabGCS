@@ -1,0 +1,1086 @@
+      Project type: <bg_info>Vue</bg_info>
+Analyzing .eslintrc.js...
+Analyzing package.json...
+Analyzing babel.config.js...
+<bg_info>Analyzing Vue, TS and JS files in ./</bg_info>
+👉 Using <bg_info>default</bg_info> configuration
+      Applying 6 rulesets: <bg_info>rrd, security, vue-caution, vue-essential, vue-recommended, vue-strong</bg_info>
+      Applying 53 individual rules: <bg_info>amountOfComments, apiWithoutMethod, bigVif, bigVshow, complicatedConditions, componentFilenameCasing, componentFiles, computedSideEffects, cyclomaticComplexity, deepIndentation, directiveShorthands, elementAttributeOrder, elementSelectorsWithScoped, elseCondition, fullWordComponentName, functionSize, globalStyle, htmlImageElements, htmlLink, hugeFiles, ifWithoutCurlyBraces, implicitParentChildCommunication, magicNumbers, multiAttributeElements, nestedTernary, noDirectDomAccess, noImportant, noInlineStyles, noPropDestructure, noSkippedTests, noTsLang, noVarDeclaration, parameterCount, plainScript, propNameCasing, propsDrilling, quotedAttributeValues, rateLimiter, repeatedCss, scriptLength, selfClosingComponents, shortVariableName, simpleComputed, simpleProp, singleNameComponent, templateSimpleExpression, tooManyProps, topLevelElementOrder, vForExpression, vForWithIndexKey, vforNoKey, vifWithVfor, zeroLengthComparison</bg_info>
+      Ignoring 0 rulesets: N/A
+      Ignoring 0 individual rules: N/A
+      Ignoring file-specific rules: 
+      Excluding -
+      Output level <bg_info>all</bg_info>
+      Grouping by <bg_info>rule</bg_info>
+      Sorting <bg_info>desc</bg_info>
+Analyzing src/App.vue...
+Analyzing src/components/common/RecipeImage.vue...
+Analyzing src/components/common/buttonBase.vue...
+Analyzing src/components/common/filtersBase.vue...
+Analyzing src/components/header/headerComponent.vue...
+Analyzing src/features/cadastro/components/CadastroComponent.vue...
+Analyzing src/features/cadastro/models/CadastroModel.js...
+Analyzing src/features/cadastro/viewmodels/CadastroViewModels.js...
+Analyzing src/features/cadastro/views/CadastroPage.vue...
+Analyzing src/features/landing/components/LeftComponent.vue...
+Analyzing src/features/landing/components/LoginComponent.vue...
+Analyzing src/features/landing/components/RightComponent.vue...
+Analyzing src/features/landing/viewmodels/LandingPageViewModel.js...
+Analyzing src/features/landing/models/LandingPageModel.js...
+Analyzing src/features/landing/views/LandingPage.vue...
+Analyzing src/features/recipeAdd/components/alertBox.vue...
+Analyzing src/features/recipeAdd/components/formsAddBase.vue...
+Analyzing src/features/recipeAdd/models/RecipeAdd.js...
+Analyzing src/features/recipeAdd/views/AddRecipePage.vue...
+Analyzing src/features/recipeAdd/viewmodels/RecipeAddViewModel.js...
+Analyzing src/features/recipeFav/components/FavoriteButton.vue...
+Analyzing src/features/recipeFav/models/FavoriteModel.js...
+Analyzing src/features/recipeFav/utils/mockAPI.js...
+Analyzing src/features/recipeList/components/AvisoVazio.vue...
+Analyzing src/features/recipeFav/views/FavoritesPage.vue...
+Analyzing src/features/recipeFav/viewmodels/FavoriteViewModel.js...
+Analyzing src/features/recipeList/components/RecipeCard.vue...
+Analyzing src/features/recipeList/models/Recipe.js...
+Analyzing src/features/recipeList/viewmodels/RecipeListViewModel.js...
+Analyzing src/features/recipeList/views/RecipeListPage.vue...
+Analyzing src/features/recipePage/components/RecipeDetailsEdit.vue...
+Analyzing src/features/recipePage/components/RecipeIngredientsEdit.vue...
+Analyzing src/features/recipePage/models/recipePageModels.js...
+Analyzing src/features/recipePage/viewmodels/recipeEditPageViewModels.js...
+Analyzing src/features/recipePage/viewmodels/recipePageViewModels.js...
+Analyzing src/features/recipePage/views/RecipeEditPage.vue...
+Analyzing src/main.js...
+Analyzing src/features/recipePage/views/RecipePage.vue...
+Analyzing src/plugins/axios.js...
+Analyzing src/plugins/globalComponents.js...
+Analyzing src/router/router.js...
+Analyzing src/services/ImageService.js...
+Analyzing src/utils/AuthService.js...
+Analyzing src/utils/httpStatus.js...
+Analyzing vue.config.js...
+Found <bg_info>48</bg_info> files
+
+- <text_info> <text_info>vue-caution ~ element selectors with scoped</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(img)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(base)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(header)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(search)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(input)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(search)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(link)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(menu)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(input)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(label)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(link)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(input)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(label)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(link)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   <bg_warn>(input)</bg_warn> 🚨
+
+   <bg_warn>(input)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(p)</bg_warn> 🚨
+
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(form)</bg_warn> 🚨
+
+   <bg_warn>(p)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   <bg_warn>(label)</bg_warn> 🚨
+
+   <bg_warn>(label)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(section)</bg_warn> 🚨
+
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   <bg_warn>(section)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/components/FavoriteButton.vue\src/features/recipeFav/components/FavoriteButton.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   <bg_warn>(header)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   <bg_warn>(p)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/AvisoVazio.vue\src/features/recipeList/components/AvisoVazio.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(title)</bg_warn> 🚨
+
+   <bg_warn>(details)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(p)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   <bg_warn>(details)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(p)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   <bg_warn>(main)</bg_warn> 🚨
+
+   <bg_warn>(article)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(title)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   <bg_warn>(textarea)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>(main)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>(main)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>(ul)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>(input)</bg_warn> 🚨
+
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(button)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>(main)</bg_warn> 🚨
+
+   <bg_warn>(main)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   <bg_warn>(button)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   <bg_warn>(header)</bg_warn> 🚨
+
+   <bg_warn>(ul)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(main)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(main)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(article)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(header)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   <bg_warn>(search)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(main)</bg_warn> 🚨
+
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   <bg_warn>(main)</bg_warn> 🚨
+
+   <bg_warn>(input)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   👉 <text_warn>Prefer class selectors over element selectors in scoped styles, because large numbers of element selectors are slow.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-caution/element-selectors-with-scoped.html
+   <bg_warn>(p)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+
+- <text_info> <text_info>vue-strong ~ multi-attribute elements</text_info></text_info>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   Element <bg_warn><svg></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   Element <bg_warn><form></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LeftComponent.vue\src/features/landing/components/LeftComponent.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   Element <bg_warn><span></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   Element <bg_warn><section></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><form></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/RightComponent.vue\src/features/landing/components/RightComponent.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/views/LandingPage.vue\src/features/landing/views/LandingPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><LeftComponent></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><RightComponent></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/views/LandingPage.vue\src/features/landing/views/LandingPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/views/LandingPage.vue\src/features/landing/views/LandingPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><LoginComponent></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><form></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   Element <bg_warn><filters-base></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   Element <bg_warn><p></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><p></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   Element <bg_warn><AlertBox></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   Element <bg_warn><RecipeForm></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   Element <bg_warn><AlertBox></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><section></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><section></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><circle></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   Element <bg_warn><line></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><line></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   Element <bg_warn><button-base></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/AvisoVazio.vue\src/features/recipeList/components/AvisoVazio.vue]8;;\
+   Element <bg_warn><button-base></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/AvisoVazio.vue\src/features/recipeList/components/AvisoVazio.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   Element <bg_warn><button-base></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><recipe-card></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   Element <bg_warn><input></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><select></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   Element <bg_warn><textarea></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   Element <bg_warn><li></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><img></bg_warn> should have its attributes on separate lines 🚨
+
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   Element <bg_warn><div></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   Element <bg_warn><favorite-button></bg_warn> should have its attributes on separate lines 🚨
+
+   👉 <text_warn>Elements with multiple attributes should span multiple lines, with one attribute per line.</text_warn>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/RecipeImage.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+
+- <text_info> <text_info>rrd ~ repeated CSS</text_info></text_info>
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   Element <bg_warn><button></bg_warn> should have its attributes on separate lines 🚨
+
+   repeated CSS: (flex-direction:column;) in 12 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue\src/components/common/RecipeImage.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/components/header/headerComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/RecipeImage.vue, src/components/header/headerComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (height:2rem;) in 4 files 🚨
+
+   repeated CSS: (text-align:center;) in 7 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/RecipeImage.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (margin:0;) in 8 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/components/common/filtersBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/views/CadastroPage.vue, src/features/landing/views/LandingPage.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/RecipeImage.vue, src/components/common/filtersBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/views/CadastroPage.vue, src/features/landing/views/LandingPage.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue, src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue\src/components/common/RecipeImage.vue, src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (position:absolute;) in 14 files 🚨
+
+   repeated CSS: (right:0;) in 4 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/components/FavoriteButton.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/components/AvisoVazio.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/buttonBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/components/FavoriteButton.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/components/AvisoVazio.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   repeated CSS: (border:none;) in 12 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/common/filtersBase.vue, src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   repeated CSS: (align-items:center;) in 10 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (color:white;) in 6 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   repeated CSS: (font-style:normal;) in 9 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue\src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue]8;;\
+   repeated CSS: (font-weight:400;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (background:none;) in 4 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (font-weight:600;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (text-align:left;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/views/FavoritesPage.vue\src/components/header/headerComponent.vue, src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LeftComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (font-weight:700;) in 7 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/landing/components/RightComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (flex-shrink:0;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (margin-bottom:1rem;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (background-color:transparent;) in 4 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/views/RecipeListPage.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/formsAddBase.vue, src/features/recipeFav/views/FavoritesPage.vue, src/features/recipeList/views/RecipeListPage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (justify-content:center;) in 5 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/landing/components/LoginComponent.vue, src/features/recipeAdd/components/alertBox.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   repeated CSS: (margin-top:1rem;) in 6 files 🚨
+
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue, src/features/recipeFav/components/FavoriteButton.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue\src/components/header/headerComponent.vue, src/features/recipeFav/components/FavoriteButton.vue, src/features/recipePage/views/RecipeEditPage.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   repeated CSS: (line-height:normal;) in 9 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue, src/features/cadastro/views/CadastroPage.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/features/cadastro/components/CadastroComponent.vue, src/features/cadastro/views/CadastroPage.vue, src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   repeated CSS: (height:auto;) in 7 files 🚨
+
+   repeated CSS: (padding:1rem;) in 6 files 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue, src/features/recipeList/components/RecipeCard.vue, src/features/recipeList/views/RecipeListPage.vue, src/features/recipePage/components/RecipeDetailsEdit.vue, src/features/recipePage/components/RecipeIngredientsEdit.vue, src/features/recipePage/views/RecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+
+- <text_info> <text_info>rrd ~ no ts lang</text_info></text_info>
+   👉 <text_warn>Avoid repeating CSS properties with the same value more than 3 times across files. Consider using CSS variables or a common class.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/repeated-css.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/views/CadastroPage.vue\src/features/cadastro/views/CadastroPage.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LeftComponent.vue\src/features/landing/components/LeftComponent.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/RightComponent.vue\src/features/landing/components/RightComponent.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/views/LandingPage.vue\src/features/landing/views/LandingPage.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/components/FavoriteButton.vue\src/features/recipeFav/components/FavoriteButton.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/AvisoVazio.vue\src/features/recipeList/components/AvisoVazio.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   👉 <text_warn>Use typescript instead of javascript.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-ts-lang.html
+   <bg_warn>component uses js instead of ts</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+
+- <text_info> <text_info>rrd ~ Plain <script> blocks</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/views/CadastroPage.vue\src/features/cadastro/views/CadastroPage.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LeftComponent.vue\src/features/landing/components/LeftComponent.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/RightComponent.vue\src/features/landing/components/RightComponent.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/views/LandingPage.vue\src/features/landing/views/LandingPage.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/components/FavoriteButton.vue\src/features/recipeFav/components/FavoriteButton.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/AvisoVazio.vue\src/features/recipeList/components/AvisoVazio.vue]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/views/RecipeListPage.vue\src/features/recipeList/views/RecipeListPage.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeDetailsEdit.vue\src/features/recipePage/components/RecipeDetailsEdit.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipeEditPage.vue\src/features/recipePage/views/RecipeEditPage.vue]8;;\
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   👉 <text_warn> Consider using <script setup> to leverage the new SFC <script> syntax.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/plain-script.html
+
+- <text_info> <text_info>rrd ~ else conditions</text_info></text_info>
+   <bg_warn>Plain <script> block</bg_warn> found 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   else clauses found <bg_err>(1)</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/viewmodels/LandingPageViewModel.js\src/features/landing/viewmodels/LandingPageViewModel.js]8;;\
+   else clauses found <bg_err>(1)</bg_err> 🚨
+
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/views/AddRecipePage.vue\src/features/recipeAdd/views/AddRecipePage.vue]8;;\
+   else clauses found <bg_err>(1)</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/components/FavoriteButton.vue\src/features/recipeFav/components/FavoriteButton.vue]8;;\
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   else clauses found <bg_err>(2)</bg_err> 🚨
+
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/viewmodels/FavoriteViewModel.js\src/features/recipeFav/viewmodels/FavoriteViewModel.js]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/views/FavoritesPage.vue\src/features/recipeFav/views/FavoritesPage.vue]8;;\
+   else clauses found <bg_err>(1)</bg_err> 🚨
+
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/models/recipePageModels.js\src/features/recipePage/models/recipePageModels.js]8;;\
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   else clauses found <bg_err>(2)</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   else clauses found <bg_err>(2)</bg_err> 🚨
+
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/router/router.js\src/router/router.js]8;;\
+   else clauses found <bg_err>(1)</bg_err> 🚨
+
+   👉 <text_warn>Try to rewrite the conditions in a way that the else clause is not necessary.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/else-condition.html
+
+- <text_info> <text_info>rrd ~ if without curly braces</text_info></text_info>
+   else clauses found <bg_err>(2)</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   line #64 if statement without curly braces: <bg_err>if (!file) return false;</bg_err> 🚨
+
+   line #65 if statement without curly braces: <bg_err>if (!isMimeTypeValid(file)) return false;</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   line #66 if statement without curly braces: <bg_err>if (!hasAllowedExtension(file.name)) return false;</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   line #67 if statement without curly braces: <bg_err>if (!isSizeValid(file)) return false;</bg_err> 🚨
+
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   line #77 if statement without curly braces: <bg_err>if (!file) return 'Nenhum arquivo selecionado.';</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   line #78 if statement without curly braces: <bg_err>if (!isMimeTypeValid(file)) return 'Por favor, selecione apenas arquivos de imagem.';</bg_err> 🚨
+
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   line #79 if statement without curly braces: <bg_err>if (!hasAllowedExtension(file.name)) return 'Formato de arquivo não suportado. Use: JPG, JPEG, PNG, GIF ou WebP.';</bg_err> 🚨
+
+   👉 <text_warn>All if statements must be enclosed in curly braces for better readability and maintainability.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/if-without-curly-braces.html
+   line #80 if statement without curly braces: <bg_err>if (!isSizeValid(file)) return 'Arquivo muito grande. Tamanho máximo: 5MB.';</bg_err> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+
+- <text_info> <text_info>vue-strong ~ component name is not PascalCase and not kebab-case</text_info></text_info>
+   👉 <text_warn>Rename the component to use PascalCase or kebab-case file name.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/component-filename-casing.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   component name is <bg_warn>not PascalCase, nor kebab-case.</bg_warn> 🚨
+
+   👉 <text_warn>Rename the component to use PascalCase or kebab-case file name.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/component-filename-casing.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/filtersBase.vue\src/components/common/filtersBase.vue]8;;\
+   component name is <bg_warn>not PascalCase, nor kebab-case.</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/header/headerComponent.vue\src/components/header/headerComponent.vue]8;;\
+   👉 <text_warn>Rename the component to use PascalCase or kebab-case file name.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/component-filename-casing.html
+   component name is <bg_warn>not PascalCase, nor kebab-case.</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/alertBox.vue\src/features/recipeAdd/components/alertBox.vue]8;;\
+   component name is <bg_warn>not PascalCase, nor kebab-case.</bg_warn> 🚨
+
+   👉 <text_warn>Rename the component to use PascalCase or kebab-case file name.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/component-filename-casing.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+   component name is <bg_warn>not PascalCase, nor kebab-case.</bg_warn> 🚨
+
+   👉 <text_warn>Rename the component to use PascalCase or kebab-case file name.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/component-filename-casing.html
+
+- <text_info> <text_info>rrd ~ function size</text_info></text_info>
+   👉 <text_warn>Functions must be shorter than 20 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/function-size.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/viewmodels/RecipeAddViewModel.js\src/features/recipeAdd/viewmodels/RecipeAddViewModel.js]8;;\
+   function <bg_warn>(collectMissingFields#7)</bg_warn> is too long: <bg_warn>24 lines</bg_warn> 🚨
+
+   👉 <text_warn>Functions must be shorter than 20 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/function-size.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/viewmodels/RecipeAddViewModel.js\src/features/recipeAdd/viewmodels/RecipeAddViewModel.js]8;;\
+   function <bg_err>(createFormHandlers#92)</bg_err> is too long: <bg_err>64 lines</bg_err> 🚨
+
+   👉 <text_warn>Functions must be shorter than 20 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/function-size.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeFav/viewmodels/FavoriteViewModel.js\src/features/recipeFav/viewmodels/FavoriteViewModel.js]8;;\
+   function <bg_err>(useFavoriteViewModel#4)</bg_err> is too long: <bg_err>54 lines</bg_err> 🚨
+
+   👉 <text_warn>Functions must be shorter than 20 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/function-size.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/viewmodels/RecipeListViewModel.js\src/features/recipeList/viewmodels/RecipeListViewModel.js]8;;\
+   function <bg_err>(useRecipeListViewModel#5)</bg_err> is too long: <bg_err>55 lines</bg_err> 🚨
+
+
+- <text_info> <text_info>rrd ~ no Inline Styles</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Avoid using inline styles. Consider moving the styles to a CSS or SCSS file, or use a Vue scoped style.</text_warn>
+   line #9 <bg_warn>Found inline style: style="imageStyle"</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Avoid using inline styles. Consider moving the styles to a CSS or SCSS file, or use a Vue scoped style.</text_warn>
+   line #15 <bg_warn>Found inline style: style="imageStyle"</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/buttonBase.vue\src/components/common/buttonBase.vue]8;;\
+   👉 <text_warn>Avoid using inline styles. Consider moving the styles to a CSS or SCSS file, or use a Vue scoped style.</text_warn>
+   line #1 <bg_warn>Found inline style: style="computedStyle"</bg_warn> 🚨
+
+
+- <text_info> <text_info>rrd ~ Long <script> blocks</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/components/common/RecipeImage.vue\src/components/common/RecipeImage.vue]8;;\
+   👉 <text_warn>Try to refactor out the logic into composable functions or other files and keep the script block's length under 100 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/script-length.html
+   <bg_warn>(110 lines)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/viewmodels/RecipeAddViewModel.js\src/features/recipeAdd/viewmodels/RecipeAddViewModel.js]8;;\
+   👉 <text_warn>Try to refactor out the logic into composable functions or other files and keep the script block's length under 100 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/script-length.html
+   <bg_warn>(170 lines)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   <bg_warn>(104 lines)</bg_warn> 🚨
+
+   👉 <text_warn>Try to refactor out the logic into composable functions or other files and keep the script block's length under 100 lines.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/script-length.html
+
+- <text_info> <text_info>rrd ~ amount of comments</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   👉 <text_warn>lots of comments found</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/amount-of-comments.html
+   The script block contains 35.13% comments, which exceeds the limit of 30%. 🚨
+
+   The script block contains 56.14% comments, which exceeds the limit of 30%. 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/utils/AuthService.js\src/utils/AuthService.js]8;;\
+   👉 <text_warn>lots of comments found</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/amount-of-comments.html
+
+- <text_info> <text_info>rrd ~ cyclomatic complexity</text_info></text_info>
+   👉 <text_warn>Try to reduce complexity.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/cyclomatic-complexity.html
+   Cyclomatic complexity is <bg_warn>high (10)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/viewmodels/RecipeAddViewModel.js\src/features/recipeAdd/viewmodels/RecipeAddViewModel.js]8;;\
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/services/ImageService.js\src/services/ImageService.js]8;;\
+   Cyclomatic complexity is <bg_err>very high (13)</bg_err> 🚨
+
+   👉 <text_warn>Try to reduce complexity.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/cyclomatic-complexity.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/components/CadastroComponent.vue\src/features/cadastro/components/CadastroComponent.vue]8;;\
+
+- <text_info> <text_info>rrd ~ html link</text_info></text_info>
+   👉 <text_warn>Use router-link or NuxtLink.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/html-link.html
+   1 <bg_warn>html link found</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/landing/components/LoginComponent.vue\src/features/landing/components/LoginComponent.vue]8;;\
+   1 <bg_warn>html link found</bg_warn> 🚨
+
+   👉 <text_warn>Use router-link or NuxtLink.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/html-link.html
+
+- <text_info> <text_info>rrd ~ magic numbers</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/cadastro/viewmodels/CadastroViewModels.js\src/features/cadastro/viewmodels/CadastroViewModels.js]8;;\
+   👉 <text_warn>Extract magic numbers to a constant.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/magic-numbers.html
+   magic numbers found (line #16 <bg_warn>magic number: 8</bg_warn>) 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/utils/httpStatus.js\src/utils/httpStatus.js]8;;\
+   👉 <text_warn>Extract magic numbers to a constant.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/magic-numbers.html
+   magic numbers found (line #3 <bg_warn>magic number: 500</bg_warn>) 🚨
+
+
+- <text_info> <text_info>rrd ~ VFor With Index Key</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/components/RecipeIngredientsEdit.vue\src/features/recipePage/components/RecipeIngredientsEdit.vue]8;;\
+   line #5 <bg_warn>index is being used as :key in v-for</bg_warn> 🚨
+
+   👉 <text_warn>Avoid using index as key in v-for loops.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/v-for-with-index-key.html
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipePage/views/RecipePage.vue\src/features/recipePage/views/RecipePage.vue]8;;\
+   👉 <text_warn>Avoid using index as key in v-for loops.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/v-for-with-index-key.html
+   line #41 <bg_warn>index is being used as :key in v-for</bg_warn> 🚨
+
+
+- <text_info> <text_info>rrd ~ Zero Length Comparison</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/models/RecipeAdd.js\src/features/recipeAdd/models/RecipeAdd.js]8;;\
+   👉 <text_warn>In JavaScript, any number greater than 0 is truthy, so you can directly use the length property.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/zero-length-comparison.html
+   line #17 zero length comparison found <bg_warn>(this.ingredientes)</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/viewmodels/RecipeAddViewModel.js\src/features/recipeAdd/viewmodels/RecipeAddViewModel.js]8;;\
+   👉 <text_warn>In JavaScript, any number greater than 0 is truthy, so you can directly use the length property.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/zero-length-comparison.html
+   line #123 zero length comparison found <bg_warn>(missing)</bg_warn> 🚨
+
+
+- <text_info> <text_info>vue-strong ~ lengthy template expression</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeList/components/RecipeCard.vue\src/features/recipeList/components/RecipeCard.vue]8;;\
+   line #13 <bg_warn>recipe.qtdPessoas > 6 ? '+6' : recipe.qtdPessoas</bg_warn> 🚨
+
+   👉 <text_warn>Refactor the expression into a computed property.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/vue-strong/template-simple-expression.html
+
+- <text_info> <text_info>rrd ~ complicated conditions</text_info></text_info>
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/models/RecipeAdd.js\src/features/recipeAdd/models/RecipeAdd.js]8;;\
+   👉 <text_warn>Simplify complex conditions by breaking them down into smaller, more manageable parts.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/complicated-conditions.html
+   👉 <text_warn>Avoid direct DOM manipulation in Vue components. Use refs or Vue's template syntax instead.</text_warn> See: https://vue-mess-detector.webmania.cc/rules/rrd/no-direct-dom-access.html
+   line #2 <bg_warn>script has a complicated condition with 6 blocks</bg_warn> 🚨
+
+   ]8;;file:///home/eduardo/dev/Faculdade/Manutencao_Software/repositorios-open-source/trabGCS/front/src/features/recipeAdd/components/formsAddBase.vue\src/features/recipeAdd/components/formsAddBase.vue]8;;\
+
+- <text_info> <text_info>rrd ~ no direct dom access</text_info></text_info>
+   line #20 <bg_warn>Direct DOM access detected: querySelector(</bg_warn> 🚨
+
+Found <bg_err>21 errors</bg_err>, and <bg_warn>224 warnings</bg_warn>, <bg_info>4,487 lines</bg_info> of code in <bg_info>48 files</bg_info>
+Code Health: [<bg_ok>_________________________________________________________</bg_ok><bg_warn>___</bg_warn><bg_err></bg_err>] 95%
+
+<bg_ok>Code health is GOOD: 95%</bg_ok>
+

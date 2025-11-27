@@ -1,26 +1,25 @@
 <template>
   <div class="container">
-    <LeftComponent class="left"/>
-    <CadastroComponent class="cadastro"/>
+    <LeftComponent class="left" />
+    <CadastroComponent class="cadastro" />
   </div>
 </template>
 
 <script>
 import CadastroComponent from "@/features/cadastro/components/CadastroComponent.vue";
-import LeftComponent from '@/features/landing/components/LeftComponent.vue';
+import LeftComponent from "@/features/landing/components/LeftComponent.vue";
 
 export default {
-  name: 'CadastroPage',
+  name: "CadastroPage",
   components: {
     CadastroComponent,
-    LeftComponent
+    LeftComponent,
   },
 };
 </script>
 
 <style scoped>
 .container {
-  position: relative;
   width: 100%;
   height: 100vh;
 }
@@ -35,13 +34,13 @@ export default {
 }
 
 .cadastro {
-    width: 32.6875rem;
-    height: 31.25rem;
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
+  width: 32.6875rem;
+  height: 31.25rem;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 @media (min-width: 1600px) {

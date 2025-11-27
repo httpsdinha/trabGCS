@@ -9,8 +9,8 @@ export const AuthService = {
    * @returns {boolean} true se autenticado, false caso contrário
    */
   isAuthenticated() {
-    const userEmail = localStorage.getItem('userEmail');
-    return userEmail !== null && userEmail !== '';
+    const userEmail = localStorage.getItem("userEmail");
+    return userEmail !== null && userEmail !== "";
   },
 
   /**
@@ -18,7 +18,7 @@ export const AuthService = {
    * @returns {string|null} Email do usuário ou null se não autenticado
    */
   getCurrentUserEmail() {
-    return localStorage.getItem('userEmail');
+    return localStorage.getItem("userEmail");
   },
 
   /**
@@ -26,7 +26,7 @@ export const AuthService = {
    * Remove dados de autenticação do localStorage
    */
   logout() {
-    localStorage.removeItem('userEmail');
+    localStorage.removeItem("userEmail");
   },
 
   /**
@@ -34,7 +34,7 @@ export const AuthService = {
    * @param {string} email - Email do usuário
    */
   login(email) {
-    localStorage.setItem('userEmail', email);
+    localStorage.setItem("userEmail", email);
   },
 
   /**
@@ -42,13 +42,13 @@ export const AuthService = {
    * @param {object} router - Instância do Vue Router
    * @param {string} fallbackRoute - Rota para redirecionamento (padrão: '/')
    */
-  requireAuth(router, fallbackRoute = '/') {
+  requireAuth(router, fallbackRoute = "/") {
     if (!this.isAuthenticated()) {
       router.push(fallbackRoute);
       return false;
     }
     return true;
-  }
+  },
 };
 
 export default AuthService;

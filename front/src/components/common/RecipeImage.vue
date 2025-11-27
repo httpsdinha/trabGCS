@@ -1,75 +1,79 @@
 <template>
   <div class="recipe-image-container">
-    <img 
+    <img
       v-if="imageUrl && !hasError"
-      :src="imageUrl" 
+      :src="imageUrl"
       :alt="altText"
       :class="imageClass"
       @load="onImageLoad"
       @error="onImageError"
       :style="imageStyle"
     />
-    <div 
-      v-else 
-      class="image-placeholder"
+    <div
+      v-else
+      class="image-placeholder flex-center"
       :class="placeholderClass"
       :style="imageStyle"
     >
       <div class="placeholder-icon">
-        <img src="@/assets/chapeu-de-chef.png" alt="Ícone de receita" class="chef-icon" />
+        <img
+          src="@/assets/chapeu-de-chef.png"
+          alt="Ícone de receita"
+          class="chef-icon"
+        />
       </div>
       <p class="placeholder-text">{{ placeholderText }}</p>
     </div>
-    <div v-if="isLoading" class="loading-overlay">
+    <div v-if="isLoading" class="loading-overlay flex-center">
       <div class="loading-spinner"></div>
     </div>
   </div>
 </template>
 
 <script>
-import ImageService from '@/services/ImageService';
+import ImageService from "@/services/ImageService";
 
 export default {
-  name: 'RecipeImage',
+  name: "RecipeImage",
   props: {
     imageName: {
       type: String,
-      default: null
+      default: null,
     },
     altText: {
       type: String,
-      default: 'Imagem da receita'
+      default: "Imagem da receita",
     },
     width: {
       type: String,
-      default: '9.375rem'
+      default: "9.375rem",
     },
     height: {
       type: String,
-      default: '9.375rem'
+      default: "9.375rem",
     },
     borderRadius: {
       type: String,
-      default: '0.5rem'
+      default: "0.5rem",
     },
     placeholderText: {
       type: String,
-      default: 'Imagem não disponível'
+      default: "Imagem não disponível",
     },
     imageClass: {
       type: String,
-      default: 'recipe-img'
+      default: "recipe-img",
     },
     placeholderClass: {
       type: String,
-      default: 'recipe-placeholder'
-    }
+      default: "recipe-placeholder",
+    },
   },
   data() {
     return {
       imageUrl: null,
       hasError: false,
-      isLoading: true
+      isLoading: true,
     };
   },
   computed: {
@@ -77,9 +81,9 @@ export default {
       return {
         width: this.width,
         height: this.height,
-        borderRadius: this.borderRadius
+        borderRadius: this.borderRadius,
       };
-    }
+    },
   },
   async mounted() {
     await this.loadImage();
@@ -89,14 +93,14 @@ export default {
       async handler() {
         await this.loadImage();
       },
-      immediate: false
-    }
+      immediate: false,
+    },
   },
   methods: {
     async loadImage() {
       this.isLoading = true;
       this.hasError = false;
-      
+
       if (!this.imageName) {
         this.imageUrl = null;
         this.hasError = true;
@@ -107,7 +111,7 @@ export default {
       try {
         // Primeiro, verifica se a imagem existe
         const exists = await ImageService.imageExists(this.imageName);
-        
+
         if (exists) {
           this.imageUrl = ImageService.getImageUrl(this.imageName);
         } else {
@@ -116,7 +120,7 @@ export default {
           this.imageUrl = null;
         }
       } catch (error) {
-        console.error('Erro ao carregar imagem:', error);
+        console.error("Erro ao carregar imagem:", error);
         this.hasError = true;
         this.imageUrl = null;
       } finally {
@@ -132,14 +136,13 @@ export default {
       this.hasError = true;
       this.isLoading = false;
       this.imageUrl = null;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .recipe-image-container {
-  position: relative;
   display: inline-block;
 }
 
@@ -150,15 +153,11 @@ export default {
 }
 
 .image-placeholder {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: #f8f9fa;
   border: 2px dashed #dee2e6;
   color: #6c757d;
-  font-family: 'Jost', sans-serif;
-  position: relative;
+  font-family: "Jost", sans-serif;
 }
 
 .placeholder-icon {
@@ -187,9 +186,6 @@ export default {
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: inherit;
 }
 
@@ -197,14 +193,18 @@ export default {
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid #f3f3f3;
-  border-top: 2px solid #940D0D;
+  border-top: 2px solid #940d0d;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive design */
@@ -212,7 +212,7 @@ export default {
   .placeholder-text {
     font-size: 0.7rem;
   }
-  
+
   .chef-icon {
     width: 1.5rem;
     height: 1.5rem;
