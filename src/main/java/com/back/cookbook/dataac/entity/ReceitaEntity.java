@@ -21,8 +21,8 @@ public class ReceitaEntity {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "modo_prep")
-    private String modo_prep;
+    @Column(name = "modoPrep")
+    private String modoPrep;
 
     @Column(name = "ingredientes")
     private String ingredientes;
@@ -30,8 +30,8 @@ public class ReceitaEntity {
     @Column(name = "tempo")
     private String tempo;
 
-    @Column(name = "qtd_pessoas")
-    private String qtd_pessoas;
+    @Column(name = "qtdPessoas")
+    private String qtdPessoas;
 
     @Column(name = "custo")
     private String custo;
@@ -40,16 +40,16 @@ public class ReceitaEntity {
     private String imagem;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
+    @JoinColumn(name = "usuarioId", nullable = false)
     @JsonBackReference
     private UsuarioEntity usuario;
 
     // Construtor com todos os parâmetros
-    public ReceitaEntity(String nome, String modo_prep, String ingredientes, String tempo, String qtd_pessoas, String custo, String imagem) {
+    public ReceitaEntity(String nome, String modoPrep, String ingredientes, String tempo, String qtdPessoas, String custo, String imagem) {
         this.nome = nome;
-        this.modo_prep = modo_prep;
+        this.modoPrep = modoPrep;
         this.ingredientes = ingredientes;
-        this.qtd_pessoas = qtd_pessoas;
+        this.qtdPessoas = qtdPessoas;
         this.tempo = tempo;
         this.custo = custo;
         this.imagem = imagem;
@@ -68,8 +68,8 @@ public class ReceitaEntity {
         return this.nome;
     }
 
-    public String getModo_prep() {
-        return this.modo_prep;
+    public String getModoPrep() {
+        return this.modoPrep;
     }
 
     public String getIngredientes() {
@@ -81,7 +81,7 @@ public class ReceitaEntity {
     }
 
     public String getQtdPessoas() {
-        return this.qtd_pessoas;
+        return this.qtdPessoas;
     }
 
     public String getCusto() {
@@ -109,20 +109,20 @@ public class ReceitaEntity {
         this.nome = nome;
     }
 
-    public void setModo_prep(String modo_p) {
-        this.modo_prep = modo_p;
+    public void setModoPrep(String modoPrep) {
+        this.modoPrep = modoPrep;
     }
 
-    public void setIngredientes(String ingred) {
-        this.ingredientes = ingred;
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
     }
 
     public void setTempo(String tempo) {
         this.tempo = tempo;
     }
 
-    public void setQtdPessoas(String qtd_pessoas) {
-        this.qtd_pessoas = qtd_pessoas;
+    public void setQtdPessoas(String qtdPessoas) {
+        this.qtdPessoas = qtdPessoas;
     }
 
     public void setCusto(String custo) {
