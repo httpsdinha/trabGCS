@@ -1,122 +1,77 @@
 package com.back.cookbook.service;
 
+import com.back.cookbook.business.DTO.ReceitaRequestDTO;
 import com.back.cookbook.business.ReceitaManager;
 import com.back.cookbook.business.UsuarioManager;
 import com.back.cookbook.dataac.entity.ReceitaEntity;
 import com.back.cookbook.dataac.entity.UsuarioEntity;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-
 @RestController
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
 @RequestMapping("/receita")
 public class ReceitaController {
-    @Autowired(required = true)
-    ReceitaManager receitaManager;
 
-    @Autowired
-    UsuarioManager usuarioManager;
-    
-    @Autowired
-    ImageUploadService imageUploadService;
+    // Dependências finais para injeção via construtor
+    private final ReceitaManager receitaManager;
+    private final UsuarioManager usuarioManager;
+    private final ImageUploadService imageUploadService;
 
-    @GetMapping("/")
-    @ResponseBody
-    public String getReceitas(){
-        return "oi";
+    // Injeção via construtor (Melhor para testes)
+    public ReceitaController(ReceitaManager receitaManager, 
+                             UsuarioManager usuarioManager, 
+                             ImageUploadService imageUploadService) {
+        this.receitaManager = receitaManager;
+        this.usuarioManager = usuarioManager;
+        this.imageUploadService = imageUploadService;
     }
 
-    // Retornar um erro ou código de erro se der errado
-    @PostMapping(value = "/adicionar", consumes = "multipart/form-data")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
-    public ResponseEntity<String> adicionar(
-        @RequestParam String nome,
-        @RequestParam(required = false, defaultValue = "") String modo_prep,
-        @RequestParam(required = false, defaultValue = "") String ingredientes,
-        @RequestParam(required = false, defaultValue = "") String tempo,
-        @RequestParam(required = false, defaultValue = "") String qtd_pessoas,
-        @RequestParam(required = false, defaultValue = "") String custo,
-        @RequestParam(value = "imagem", required = false) MultipartFile imagem,
-        @RequestParam String email
-    ) {
-        try {
-            UsuarioEntity usuario = usuarioManager.findByEmail(email);
-            if (usuario == null) {
-                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário não encontrado.");
-            }
+    // O método "getReceitas" ("oi") foi removido (Remoção de Código Morto)
 
-            String caminhoImagem = null;
-            if (imagem != null && !imagem.isEmpty()) {
-                caminhoImagem = imageUploadService.salvarImagem(imagem);
-            }
-            ReceitaEntity receita = new ReceitaEntity(nome, modo_prep, ingredientes, tempo, qtd_pessoas, custo, caminhoImagem);
-            receita.setUsuario(usuario);
-            receitaManager.criarReceita(nome, modo_prep, ingredientes, tempo, qtd_pessoas, custo, caminhoImagem, usuario);
+    @PostMapping(value = "/adicionar", consumes = "multipart/form-data")
+    public ResponseEntity<String> adicionar(@ModelAttribute ReceitaRequestDTO receitaDto) {
+        try {
+            // A lógica pesada de validação de usuário e upload deve ir para o Manager.
+            // O Controller apenas passa o DTO.
+            receitaManager.criarReceita(receitaDto);
             return ResponseEntity.ok("Receita adicionada com sucesso.");
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body("Erro: " + e.getMessage());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao adicionar receita: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("Erro ao adicionar receita: " + e.getMessage());
         }
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public ResponseEntity<ReceitaEntity> obterReceita(@PathVariable Integer id) {
-        try {
-            ReceitaEntity receita = receitaManager.obterReceitaPorId(id);
-            if (receita != null) {
-                return ResponseEntity.ok(receita);
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        ReceitaEntity receita = receitaManager.obterReceitaPorId(id);
+        if (receita != null) {
+            return ResponseEntity.ok(receita);
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @PutMapping("/atualizar")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
+    @PutMapping(value = "/atualizar", consumes = "multipart/form-data")
     public ResponseEntity<String> atualizarReceita(
-        @RequestParam Integer id,
-        @RequestParam(required = false) String nome,
-        @RequestParam(required = false) String modo_prep,
-        @RequestParam(required = false) String ingredientes,
-        @RequestParam(required = false) String tempo,
-        @RequestParam(required = false) String qtd_pessoas,
-        @RequestParam(required = false) String custo,
-        @RequestParam(required = false) MultipartFile imagem
-    ) {
+            @RequestParam Integer id,
+            @ModelAttribute ReceitaRequestDTO receitaDto) {
         try {
-            String caminhoImagem = null;
-            if (imagem != null && !imagem.isEmpty()) {
-                caminhoImagem = imageUploadService.salvarImagem(imagem);
-            }
-            receitaManager.atualizarReceita(id, nome, modo_prep, ingredientes, tempo, qtd_pessoas, custo, caminhoImagem);
+            // Novamente, agrupamos os parâmetros no DTO
+            receitaManager.atualizarReceita(id, receitaDto);
             return ResponseEntity.ok("Receita atualizada com sucesso.");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar receita: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("Erro ao atualizar: " + e.getMessage());
         }
     }
 
@@ -126,31 +81,32 @@ public class ReceitaController {
             receitaManager.deletarReceita(id);
             return ResponseEntity.ok("Receita deletada com sucesso.");
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao deletar receita: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("Erro ao deletar: " + e.getMessage());
         }
     }
 
     @GetMapping("/listar")
-    @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:3001"})
-    @ResponseBody
     public ResponseEntity<List<ReceitaEntity>> listarReceitas(@RequestParam String email) {
+        // A lógica de buscar usuário e limpar referência circular deveria estar no Manager/DTO
+        // Mantivemos aqui por compatibilidade com o código original, mas é um ponto de atenção.
         UsuarioEntity usuario = usuarioManager.findByEmail(email);
         if (usuario == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         List<ReceitaEntity> receitas = usuario.getReceitas();
-        // Optionally, set usuario to null in each receita to prevent nesting
-        receitas.forEach(receita -> receita.setUsuario(null));
+        receitas.forEach(receita -> receita.setUsuario(null)); 
         return ResponseEntity.ok(receitas);
     }
 
+    // Endpoints de imagem mantidos, mas idealmente iriam para um 'ImagemController'
     @GetMapping("/imagem/{filename:.+}")
     public ResponseEntity<Resource> servirImagem(@PathVariable String filename) {
         try {
             Path caminhoArquivo = imageUploadService.getCaminhoImagem(filename);
             Resource recurso = new UrlResource(caminhoArquivo.toUri());
 
-            if (recurso.exists()) {
+            if (recurso.exists() && recurso.isReadable()) {
                 String contentType = Files.probeContentType(caminhoArquivo);
                 if (contentType == null) {
                     contentType = "application/octet-stream";
@@ -161,28 +117,10 @@ public class ReceitaController {
                         .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + recurso.getFilename() + "\"")
                         .body(recurso);
             } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+                return ResponseEntity.notFound().build();
             }
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+            return ResponseEntity.internalServerError().build();
         }
     }
-
-    @GetMapping("/imagem/url/{filename:.+}")
-    public ResponseEntity<String> obterUrlImagem(@PathVariable String filename) {
-        try {
-            Path caminhoArquivo = imageUploadService.getCaminhoImagem(filename);
-            Resource recurso = new UrlResource(caminhoArquivo.toUri());
-
-            if (recurso.exists()) {
-                String url = recurso.getURI().toString();
-                return ResponseEntity.ok(url);
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Imagem não encontrada.");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao obter URL da imagem: " + e.getMessage());
-        }
-    }
-
 }
