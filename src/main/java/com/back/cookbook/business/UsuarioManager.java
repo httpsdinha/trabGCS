@@ -45,11 +45,13 @@ public class UsuarioManager {
         UsuarioEntity u = userRepository.findByEmail(email);
 
         if(u != null) {
-            if (!validaEmail(email))
+            if (!validaEmail(email)) {
                 return false;
+            }
 
-            if (u.getEmail().equals(email) && u.getSenha().equals(hashPassword(senha)))
+            if (u.getEmail().equals(email) && u.getSenha().equals(hashPassword(senha))) {
                 return true;
+            }
         }
         return false;
     }
@@ -61,9 +63,9 @@ public class UsuarioManager {
      * @return
      */
     public static boolean validaEmail(String email){
-        String EMAIL_REGEX = "^[\\w!#$%&'*+/=?`{|}~^.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
+        String emailRegex = "^[\\w!#$%&'*+/=?`{|}~^.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
 
-        Pattern pattern = Pattern.compile(EMAIL_REGEX);
+        Pattern pattern = Pattern.compile(emailRegex);
         // Verifica o email usando o matcher
         Matcher matcher = pattern.matcher(email);
 
