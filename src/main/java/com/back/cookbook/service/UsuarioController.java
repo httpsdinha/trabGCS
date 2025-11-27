@@ -6,7 +6,6 @@ import com.back.cookbook.dataac.entity.UsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
@@ -20,10 +19,12 @@ public class UsuarioController {
     public ResponseEntity<String> adicionar(@RequestParam String email, @RequestParam String senha){
         try {
             boolean sla = usuarioManager.criarUsuario(email, senha);
-            if(!sla)
+            if (!sla) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email inválido");
-            else
+            }
+            else {
                 return ResponseEntity.status(HttpStatus.OK).body("Usuario criado");
+            }
         } catch(Exception e){
             System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao criar usuário");
@@ -34,10 +35,12 @@ public class UsuarioController {
     public ResponseEntity<String> login(@RequestBody LoginDTO login){
         try{
             boolean sla = usuarioManager.validaUsuario(login.email(), login.senha());
-            if(!sla)
+            if (!sla) {
                 return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Email ou senha inválidos");
-            else
+            }
+            else {
                 return ResponseEntity.status(HttpStatus.OK).body("Login válido");
+            }
         }catch (Exception e){
             System.out.println(e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao realizar login");

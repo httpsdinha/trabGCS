@@ -38,9 +38,11 @@ public class ImageUploadService {
         // Gerar nome único para evitar conflitos
         String nomeOriginal = imagem.getOriginalFilename();
         String extensao = "";
+
         if (nomeOriginal != null && nomeOriginal.contains(".")) {
             extensao = nomeOriginal.substring(nomeOriginal.lastIndexOf("."));
         }
+
         String nomeArquivo = UUID.randomUUID().toString() + extensao;
         
         // Criar diretório se não existir

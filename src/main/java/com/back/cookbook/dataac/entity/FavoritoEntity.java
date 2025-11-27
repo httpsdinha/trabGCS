@@ -1,7 +1,5 @@
 package com.back.cookbook.dataac.entity;
 
-import jakarta.persistence.*;
-
 @Entity
 @Table(name = "favorito")
 public class FavoritoEntity {

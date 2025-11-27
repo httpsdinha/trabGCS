@@ -1,6 +1,5 @@
 package com.back.cookbook.dataac.entity;
 
-import jakarta.persistence.*;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -22,8 +21,8 @@ public class UsuarioEntity {
 
     // Contrutores
 
+    /** Construtor para uso do JPA **/
     public UsuarioEntity(){
-
     }
 
     public UsuarioEntity(String email, String senha) {
